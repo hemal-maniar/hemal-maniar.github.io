@@ -1,9 +1,9 @@
-title: Benjamin J. Carlson
-email: bjcarlson42@gmail.com
+title: Hemal Maniar
+email: maniar.he@gmail.com
 # baseurl: "" the subpath of your site, e.g. /blog
-url: "https://benjamincarlson.net" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: bencarlsonblog
-github_username:  bjcarlson42
+url: "https://hemal-maniar.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: he_malware
+github_username:  hemal-maniar
 markdown: kramdown
 highlighter: rouge
 kramdown:
