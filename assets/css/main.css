@@ -769,12 +769,15 @@ th {
 
 .about-h3 {
     margin: 0;
-    display: flex;
+    display: inline-block;
     align-items: center;
     color: #fff;
     text-align: center;
 }
 
+.about-p {
+    color: #fff;
+}
 /*************
 * Blog
 *************/
