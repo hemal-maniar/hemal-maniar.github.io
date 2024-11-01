@@ -704,7 +704,7 @@ a.left2:hover {
 *************/
 
 #about {
-    background-color: #fff;
+    background-color: #516096;
 }
 
 #about h2 {
@@ -766,6 +766,13 @@ th {
     display: inline-block; 
     min-height: 40px;
     overflow: hidden;
+}
+
+.about-h3 {
+    margin: 0;                 
+    display: flex;             
+    align-items: center;
+    height: 100%;  
 }
 
 /*************
