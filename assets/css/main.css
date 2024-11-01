@@ -767,6 +767,12 @@ th {
     min-height: 40px;
 }
 
+.about-h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
 /*************
 * Blog
 *************/
