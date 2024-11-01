@@ -23,6 +23,7 @@ function myFunction() {
 
 // Subheading terminal effect
 consoleText(['a Security Engineer', 'a Penetration Tester', 'a Cybersecurity Analyst', 'a Blogger', 'OSCP Certified'], 'text');
+consoleText(['hemal:-$ whoami'], 'whoami');
 
 function consoleText(words, id, colors) {
     if (colors === undefined) colors = ['#2e3141'];
