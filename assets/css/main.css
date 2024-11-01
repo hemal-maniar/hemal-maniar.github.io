@@ -445,10 +445,9 @@ a.left2:hover {
 }
 
 #main h1 {
-    text-align: center;
+    text-align: left;
     padding: 20px 0;
     color: #2e3141;
-    text-transform: uppercase;
 }
 
 .parent {
@@ -768,11 +767,9 @@ th {
 }
 
 .about-h3 {
-    margin: 0;
-    display: inline-block;
-    align-items: center;
+    display: grid;
     color: #fff;
-    text-align: center;
+    text-align: left;
 }
 
 .about-p {
