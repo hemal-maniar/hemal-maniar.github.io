@@ -764,7 +764,8 @@ th {
 
 #whoami {
     display: inline-block; 
-    min-height: 20px; /* Adjust based on your design */
+    min-height: 20px;
+    overflow: hidden;
 }
 
 /*************
