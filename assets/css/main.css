@@ -462,8 +462,9 @@ a.left2:hover {
 
 .main-img {
     height: 200px;
-    width: 200px;
+    width: 300px;
     border-radius: 15px;
+    object-fit: contain;
 }
 
 .div1 {
