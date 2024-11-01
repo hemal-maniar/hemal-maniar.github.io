@@ -765,14 +765,6 @@ th {
 #whoami {
     display: inline-block; 
     min-height: 40px;
-    overflow: hidden;
-}
-
-.about-h3 {                
-    display: flex;             
-    align-items: center;
-    color: #fff;
-    height: 470px;
 }
 
 /*************
