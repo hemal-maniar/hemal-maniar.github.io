@@ -768,11 +768,10 @@ th {
     overflow: hidden;
 }
 
-.about-h3 {
-    margin: 0;                 
+.about-h3 {                
     display: flex;             
     align-items: center;
-    height: 100%;  
+    color: #fff;
 }
 
 /*************
