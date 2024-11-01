@@ -762,6 +762,11 @@ th {
     /* safari fix */
 }
 
+#whoami {
+    display: inline-block; 
+    min-height: 20px; /* Adjust based on your design */
+}
+
 /*************
 * Blog
 *************/
