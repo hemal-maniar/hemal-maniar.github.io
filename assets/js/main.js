@@ -22,7 +22,7 @@ function myFunction() {
 }
 
 // Subheading terminal effect
-consoleText(['Security Engineer', 'Cybersecurity Analyst', 'Penetration Tester', 'Blogger', 'OSCP Certified'], 'text');
+consoleText(['a Security Engineer', 'a Penetration Tester', 'a Cybersecurity Analyst', 'a Blogger', 'OSCP Certified'], 'text');
 
 function consoleText(words, id, colors) {
     if (colors === undefined) colors = ['#2e3141'];
