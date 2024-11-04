@@ -698,6 +698,7 @@ a.left2:hover {
 * Section Class
 *************/
 
+/*
 .section-class:before {
     content: "";
     display: block;
@@ -705,6 +706,7 @@ a.left2:hover {
     margin-top: -60px;
     visibility: hidden;
 }
+*/
 
 /*************
 * About Section
