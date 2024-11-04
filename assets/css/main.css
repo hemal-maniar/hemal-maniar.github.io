@@ -587,20 +587,6 @@ a.left2:hover {
     padding-bottom: 60px;
 }
 
-.div1-projects {
-    background: #516096;
-    height: 300px;
-    width: 300px;
-    border-radius: 30px;
-}
-
-.div2-projects {
-    background: #516096;
-    height: 300px;
-    width: 300px;
-    border-radius: 30px;
-}
-
 .div1-projects:hover, .div2-projects:hover {
     box-shadow: none;
 }
