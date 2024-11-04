@@ -595,6 +595,7 @@ a.left2:hover {
 }
 
 .parent-projects {
+    padding: 5%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: 1fr;
