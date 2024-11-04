@@ -591,19 +591,21 @@ a.left2:hover {
     background: #516096;
     height: 300px;
     width: 300px;
+    border-radius: 30px;
 }
 
-.div4-projects {
+.div2-projects {
     background: #516096;
     height: 300px;
     width: 300px;
+    border-radius: 30px;
 }
 
-.div1-projects:hover, .div2-projects:hover, .div3-projects:hover, .div4-projects:hover {
+.div1-projects:hover, .div2-projects:hover {
     box-shadow: none;
 }
 
-.div1-projects:hover, .div2-projects:hover, .div3-projects:hover, .div4-projects:hover {
+.div1-projects:hover, .div2-projects:hover {
     box-shadow: none;
 }
 
@@ -633,12 +635,6 @@ a.left2:hover {
     .div2-projects {
         grid-area: 1 / 2 / 2 / 3;
     }
-    .div3-projects {
-        grid-area: 2 / 1 / 3 / 2;
-    }
-    .div4-projects {
-        grid-area: 2 / 2 / 3 / 3;
-    }
 }
 
 @media screen and (max-width: 426px) {
@@ -654,12 +650,6 @@ a.left2:hover {
     }
     .div2-projects {
         grid-area: 2 / 1 / 3 / 2;
-    }
-    .div3-projects {
-        grid-area: 3 / 1 / 4 / 2;
-    }
-    .div4-projects {
-        grid-area: 4 / 1 / 5 / 2;
     }
 }
 
