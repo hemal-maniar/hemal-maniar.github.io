@@ -589,39 +589,14 @@ a.left2:hover {
 
 .div1-projects {
     background: #516096;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     height: 300px;
-    box-shadow: 0 3000px rgba(255, 255, 255, 0.4) inset;
-}
-
-.div2-projects {
-    background: #516096;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    box-shadow: 0 3000px rgba(255, 255, 255, 0.4) inset;
-}
-
-.div3-projects {
-    background: #516096;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    box-shadow: 0 3000px rgba(255, 255, 255, 0.4) inset;
+    width: 300px;
 }
 
 .div4-projects {
     background: #516096;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    box-shadow: 0 3000px rgba(255, 255, 255, 0.4) inset;
+    height: 300px;
+    width: 300px;
 }
 
 .div1-projects:hover, .div2-projects:hover, .div3-projects:hover, .div4-projects:hover {
