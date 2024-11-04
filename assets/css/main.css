@@ -548,6 +548,36 @@ a.left2:hover {
     padding: 60px 0 20px 0;
 }
 
+#projects ul li {
+    list-style: none;
+    padding: 10px 0;
+    font-size: 1.5em;
+}
+
+#projects ul a {
+    list-style: none;
+    padding: 10px 0;
+    font-size: 1.5em;
+}
+
+#projects ul a {
+    color: black;
+}
+
+#projects ul a:hover {
+    color: #2e3141;
+}
+
+.rotate-on-hover {
+    transition: transform 0.5s ease; /* Smooth rotation */
+    display: inline-block;
+}
+
+/* Rotate the image when hovering over the link */
+a:hover .rotate-on-hover {
+    transform: rotate(45deg);
+}
+
 .projects-p-subtitle {
     text-align: center;
 }
@@ -585,6 +615,14 @@ a.left2:hover {
     grid-column-gap: 60px;
     grid-row-gap: 0px;
     padding-bottom: 60px;
+}
+
+.div1-projects {
+    text-align: left;
+}
+
+.div2-projects {
+    text-align: left;
 }
 
 .div1-projects:hover, .div2-projects:hover {
