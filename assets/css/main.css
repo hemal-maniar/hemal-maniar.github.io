@@ -568,16 +568,6 @@ a.left2:hover {
     color: #2e3141;
 }
 
-.rotate-on-hover {
-    transition: transform 0.5s ease; /* Smooth rotation */
-    display: inline-block;
-}
-
-/* Rotate the image when hovering over the link */
-a:hover .rotate-on-hover {
-    transform: rotate(45deg);
-}
-
 .projects-p-subtitle {
     text-align: center;
 }
