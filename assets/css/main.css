@@ -20,7 +20,7 @@ html {
 }
 
 body {
-    background: #516096;
+    background: black;
     font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-decoration: none;
 }
@@ -159,7 +159,7 @@ a.left2:hover {
 }
 
 .title {
-    color: #fff;
+    color: #33ff00;
 }
 
 @media screen and (max-width: 800px) {
@@ -688,7 +688,7 @@ a.left2:hover {
 *************/
 
 #about {
-    background-color: #516096;
+    background-color: black;
 }
 
 #about h2 {
