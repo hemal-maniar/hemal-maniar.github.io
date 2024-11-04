@@ -558,9 +558,6 @@ a.left2:hover {
     list-style: none;
     padding: 10px 0;
     font-size: 1.5em;
-}
-
-#projects ul a {
     color: black;
 }
 
@@ -600,11 +597,11 @@ a.left2:hover {
 }
 
 .parent-projects {
-    display: inline-grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
     grid-row-gap: 0px;
-    padding-bottom: 60px;
 }
 
 .div1-projects {
