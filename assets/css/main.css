@@ -111,7 +111,7 @@ a.left2:hover {
 
 .active {
     color: #2e3141 !important;
-    text-decoration: underline !important;
+    /*text-decoration: underline !important;*/
 }
 
 /*************
