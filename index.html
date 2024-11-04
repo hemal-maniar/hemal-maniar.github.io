@@ -191,6 +191,7 @@
             </div>
         </div>
     </section>
+
     <!-- Projects Section -->
     <section id="projects" class="section-class">
         <div class="container">
@@ -214,6 +215,28 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project">
+        <div class="parent-about">
+            <div class="div1-projects" data-aos="fade-up">
+                <h2 data-aos="fade-up">Projects</h2>
+                <ul>
+                    <li><a href="https://github.com/hemal-maniar/hemal-maniar.github.io" target="_blank">Covert Network Channel</a></li>
+                    <li><a href="https://github.com/hemal-maniar/hemal-maniar.github.io" target="_blank">Personal Website</a></li>
+                </ul>
+            </div>
+            <div class="div2-projects" data-aos="fade-up" data-aos-delay="200">
+                <h2 data-aos="fade-up">From The Blog</h2>
+                <ul>
+                {% for post in site.posts limit:7 %}
+                <li data-aos="fade-up">
+                    <a class="left left2" href="{{ post.url }}" target="_blank">{{ post.title }}</a>
+                </li>
+                {% endfor %}
+                </ul>
             </div>
         </div>
     </section>
