@@ -30,11 +30,10 @@
                     <p class="tag-p">{{ tag }}</p>
                 </a>
                 {% endfor %} -->
-                <p style="color: #2e3141; font-size: 1.5em; margin-top: 50px;">Written by <a style="color: #2e3141"
+                <p style="color: white; font-size: 1.5em; margin-top: 50px;">Written by <a style="color: white;"
                         href="{{ site.baseurl }}/blog/authors/{{ page.author }}">{% include post-meta.html author=page.author %}</a>
                 </p>
-                <p style="max-width: 300px; margin-bottom: 10px;">Ben is a student at CCSU with a passion for coding and
-                    communicating ideas.
+                <p style="max-width: 300px; margin-bottom: 10px;">Hemal is
                 </p>
             </div>
         </div>
@@ -44,14 +43,11 @@
         <div class="col-lg next-prev-img-col">
             {% if page.previous.url %}
             <a href="{{ page.previous.url }}">
-                <div class="img-container1">
-                    <img src="{{ page.previous.img }}" alt="{{ post.previous.alt }}">
-                    <div class="centered" style="text-align: right">
-                        <a href="{{ page.previous.url }}">
-                            <p>Previous Post</p>
-                        </a>
-                        <a style="font-size: 1.7em" href="{{ page.previous.url }}">&laquo; {{page.previous.title}}</a>
-                    </div>
+                <div class="centered" style="text-align: right">
+                    <a href="{{ page.previous.url }}">
+                        <p>Previous Post</p>
+                    </a>
+                    <a style="font-size: 1.7em" href="{{ page.previous.url }}">&laquo; {{page.previous.title}}</a>
                 </div>
             </a>
             {% endif %}
@@ -59,50 +55,14 @@
         <div class="col-lg next-prev-img-col">
             {% if page.next.url %}
             <a href="{{ page.next.url }}">
-                <div class="img-container1" style="text-align: left">
-                    <img src="{{ page.next.img }}" alt="{{ post.next.alt }}">
-                    <div class="centered">
-                        <a href="{{ page.next.url }}">
-                            <p>Next Post</p>
-                        </a>
-                        <a style="font-size: 1.7em" href="{{ page.next.url }}">{{page.next.title}} &raquo;</a>
-                    </div>
+                <div class="centered">
+                    <a href="{{ page.next.url }}">
+                        <p>Next Post</p>
+                    </a>
+                    <a style="font-size: 1.7em" href="{{ page.next.url }}">{{page.next.title}} &raquo;</a>
                 </div>
             </a>
             {% endif %}
-        </div>
-    </div>
-
-    <div class="container">
-        <p style="margin-top: 30px; font-size: 1.5em;">You Might Also Like:</p>
-        <div class="row">
-            {% assign posts = site.posts | where_exp: "post", "post.categories contains page.categories[0]" %}
-            {% for post in posts limit:3 %}
-            <div class="card" style="width: 22rem; margin: 0 auto; margin-bottom: 10px;" data-aos="fade-up">
-                <a href="{{ site.url }}{{ post.url }}">
-                    <div class="card-img-top-container">
-                        <img class="card-img-top" src="{{ site.url }}{{ post.img }}" alt="{{ post.alt }}">
-                    </div>
-                </a>
-                <div class="card-body">
-                    {% for category in post.categories %}
-                    <div class="category-container">
-                        <a href="{{ site.baseurl }}/blog/start-here" class="card-post-categories left left2">
-                            <p>{{ category }}</p>
-                        </a>
-                    </div>
-                    {% endfor %}
-                    <a href="{{ site.url }}{{ post.url }}">
-                        <h3 class="card-post-title">{{ post.title }}</h3>
-                        <p class="card-post-description">{{ post.description }}...</p>
-                    </a>
-                    <small class="card-post-author-date">Written by <a class="left left2" style="color: #2e3141"
-                            href="{{ site.baseurl }}/blog/authors/{{ post.author }}"><strong>{{ post.author }}</strong></a>
-                        on
-                        {{ post.date | date: '%B %d, %Y' }}</small>
-                </div>
-            </div>
-            {% endfor %}
         </div>
     </div>
     {% include footer.html %}
