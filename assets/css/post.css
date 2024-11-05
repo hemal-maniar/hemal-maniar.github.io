@@ -362,6 +362,7 @@ a.left2:hover {
     margin-top: -100px;
 }
 
+/* Blog Main*/
 .gf {
     padding-top: 20px;
 }
@@ -378,6 +379,7 @@ a.left2:hover {
     display: block;
 }
 
+/* Blog Description */
 .gr {
     -webkit-line-clamp: 2;
 }
@@ -435,7 +437,7 @@ a.left2:hover {
 }
 
 .q {
-    fill: rgba(0, 0, 0, 0.84);
+    fill: white;
 }
 
 h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form {
