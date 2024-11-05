@@ -823,11 +823,11 @@ th {
 footer {
     height: 100px;
     width: 100%;
-    background-color: #2e3141;
+    background-color: black;
     text-align: center;
 }
 
 footer p {
-    padding-top: 40px;
+    padding-bottom: 40px;
     color: #fff;
 }
