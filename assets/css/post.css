@@ -26,6 +26,7 @@ a:hover {
 
 a.left {
     position: relative;
+    color: #6d6d6d;
 }
 
 a.left:before {
@@ -628,6 +629,7 @@ pre {
 
 .p-date-author-category {
     margin-top: 15px;
+    color: #6d6d6d;
 }
 
 .ccc {

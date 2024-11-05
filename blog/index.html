@@ -77,7 +77,7 @@ meta-keywords: 'computer science blog, learn python, technology blog'
 <div class="container">
     <div class="eo gf fe r">
         <h3 data-aos="fade-up" style="color: #33ff00;">Recently Posted</h3>
-        <hr style="border-bottom: 1px solid rgba(255,255,255,0.25)">
+        <hr style="border-bottom: 1px solid rgba(255,255,255,0.15)">
     </div>
     {% for post in site.posts limit:10 offset:1 %}
     <div class="eo gf fe r" data-aos="fade-up">
@@ -94,7 +94,7 @@ meta-keywords: 'computer science blog, learn python, technology blog'
                 href="/blog/categories/{{ post.categories[0] | downcase | url_escape | strip | replace: ' ', '-' }}">{{ post.categories[0] }}</a>
             on {{ post.date | date: '%B %d, %Y' }}
         </p> 
-        <hr style="border-bottom: 1px solid rgba(255,255,255,0.25)">
+        <hr style="border-bottom: 1px solid rgba(255,255,255,0.15)">
     </div>
     {% endfor %}
 </div>
