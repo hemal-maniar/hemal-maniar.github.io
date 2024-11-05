@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Create an IOS and Android app in under 5 minutes!"
-date: 2020-04-01
-categories: ['React Native','App Development']
-tags: ['react','app development','ios','android','expo']
+title: "Cicada HackTheBox"
+date: 2024-10-11
+categories: ['HackTheBox','Walkthrough']
+tags: ['hackthebox','walkthrough','Cicada','OSCP']
 comments: true
 author: Benjamin Carlson
 description: React Native is a JavaScript framework for building cross platform mobile apps. In this tutorial I'll show you how to quickly set up a React Native project and
