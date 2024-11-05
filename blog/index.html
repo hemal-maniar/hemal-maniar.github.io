@@ -89,8 +89,8 @@ meta-keywords: 'computer science blog, learn python, technology blog'
             <h3 class="p-title ap q er bg es bh gn go gp as av gq bs gr au fp" style="color: white;">{{ post.title }}</h3>
             <p class="fy fx fn aaa">{{ post.description }}...</p>
         </a>
-        <p class="p-date-author-category">Posted by <a class="left left2"
-                href="{{ site.baseurl }}/blog/authors/{{ post.author }}">{{ post.author }}</a> in <a class="left left2"
+        <p class="p-date-author-category" style="color: #6d6d6d;">Posted by <a class="left left2" style="color: #6d6d6d;" 
+                href="{{ site.baseurl }}/blog/authors/{{ post.author }}">{{ post.author }}</a> in <a class="left left2" style="color: #6d6d6d;"
                 href="/blog/categories/{{ post.categories[0] | downcase | url_escape | strip | replace: ' ', '-' }}">{{ post.categories[0] }}</a>
             on {{ post.date | date: '%B %d, %Y' }}
         </p> 
