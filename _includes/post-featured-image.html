@@ -82,8 +82,6 @@
 </style>
 
 <div class="container-img-include">
-    <img class="img-slider" src="{{ include.image }}"
-        alt="{{ include.alt | default: 'image representing a theme in this article' }}" />
     <div class="centered">
         {% for category in include.categories%}
         <a href="/blog/categories/{{ category | downcase | url_escape | strip | replace: ' ', '-' }}">
