@@ -17,7 +17,7 @@
     {% include nav.html %}
 
     <div class="img-container">
-        {% include post-featured-image.html image=page.img alt=page.alt title=page.title categories=page.categories author=page.author date=page.date %}
+        {% include alt=page.alt title=page.title categories=page.categories author=page.author date=page.date %}
     </div>
 
     <div class="blog-post-container">
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-
+    <!--
     <div class="row-next-prev-posts">
         <div class="col-lg next-prev-img-col">
             {% if page.previous.url %}
@@ -65,6 +65,7 @@
             {% endif %}
         </div>
     </div>
+    -->
     {% include footer.html %}
     {% include footer-files.html %}
 </body>
