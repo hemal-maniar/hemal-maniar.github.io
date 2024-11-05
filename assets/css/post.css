@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: black;
     font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -477,11 +477,11 @@ h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form {
 }
 
 .aaa:hover {
-    color: rgb(110, 110, 110);
+    color: white;
 }
 
 .aaa {
-    color: rgb(110, 110, 110);
+    color: white;
 }
 
 /* inline code - span */
@@ -523,9 +523,13 @@ h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form {
 }
 
 .r {
-    display: block;
+    display: grid;
+    grid-template-columns: 25% repeat(1, 75%);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 40px 0;
 }
-
 .b {
     font-weight: 400;
 }
