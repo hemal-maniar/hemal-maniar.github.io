@@ -465,7 +465,7 @@ h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form {
 }
 
 .fx {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .fn {
@@ -519,16 +519,11 @@ h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form {
 }
 
 .ap {
-    color: rgba(0, 0, 0, 0.84);
+    color: white;
 }
 
 .r {
-    display: grid;
-    grid-template-columns: 25% repeat(1, 75%);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    padding: 40px 0;
+    display: inline;
 }
 .b {
     font-weight: 400;
