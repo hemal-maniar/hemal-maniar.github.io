@@ -77,22 +77,24 @@ meta-keywords: 'computer science blog, learn python, technology blog'
 <div class="container">
     <div class="eo gf fe r">
         <h3 data-aos="fade-up" style="color: #33ff00;">Recently Posted</h3>
+        <hr style="border-bottom: 1px solid rgba(255,255,255,0.25)">
     </div>
-    {% for post in site.posts limit:6 offset:1 %}
+    {% for post in site.posts limit:10 offset:1 %}
     <div class="eo gf fe r" data-aos="fade-up">
         <!--
         <a href="{{ site.url }}{{ post.url }}">
             <img src="{{ post.img }}" alt="" width="200px" height="100px" style="object-fit: cover;">
         </a>-->
         <a href="{{ site.url }}{{ post.url }}">
-            <h3 class="p-title ap q er bg es bh gn go gp as av gq bs gr au fp">{{ post.title }}</h3>
+            <h3 class="p-title ap q er bg es bh gn go gp as av gq bs gr au fp" style="color: white;">{{ post.title }}</h3>
             <p class="fy fx fn aaa">{{ post.description }}...</p>
         </a>
         <p class="p-date-author-category">Posted by <a class="left left2"
                 href="{{ site.baseurl }}/blog/authors/{{ post.author }}">{{ post.author }}</a> in <a class="left left2"
                 href="/blog/categories/{{ post.categories[0] | downcase | url_escape | strip | replace: ' ', '-' }}">{{ post.categories[0] }}</a>
             on {{ post.date | date: '%B %d, %Y' }}
-        </p>
+        </p> 
+        <hr style="border-bottom: 1px solid rgba(255,255,255,0.25)">
     </div>
     {% endfor %}
 </div>
