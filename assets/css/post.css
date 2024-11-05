@@ -539,7 +539,7 @@ h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form {
 }
 
 .li {
-    background: rgba(0, 0, 0, 0.05);
+    background: #6d6d6d;
 }
 
 .lh {
@@ -612,7 +612,7 @@ pre {
 }
 
 .ap {
-    color: rgba(0, 0, 0, 0.84);
+    color: white;
 }
 
 .b {
