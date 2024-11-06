@@ -68,11 +68,12 @@ a.left2:hover {
 
 .img-container {
     width: 100%;
-    height: 60vh;
+    height: 30vh;
     position: relative;
     text-align: left;
-    background-color: #000;
+    background-color: #6d6d6d;
     color: #fff;
+    padding-top: 8.5%;
 }
 
 .bottom-left {
