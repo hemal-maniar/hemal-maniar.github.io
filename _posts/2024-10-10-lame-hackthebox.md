@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Cicada HackTheBox"
-date: 2024-10-11
-categories: ['HackTheBox', 'Walkthrough']
+title: "Lame HackTheBox"
+date: 2024-10-10
+categories: ['HackTheBox', 'Walkthrough','Linux']
 comments: true
 author: Hemal Maniar
 description: Hello
 meta-description: Hello
-keywords: 'cicada,hackthebox,walkthrough,OSCP,tryharder'
+keywords: 'lame,hackthebox,walkthrough,OSCP,tryharder'
 img: 
 alt:
 output: 
