@@ -44,7 +44,6 @@ nmap -sV -p- -v 10.10.11.35 -oA nmap2
 ```
 ![](</assets/img/posts/cicada-hackthebox/Pasted image 20241011183159.png>)
 
-
 **139,445 - SMB Enumeration**
 
 The SMB share allows anonymous login which can be be exploited using the command below:
