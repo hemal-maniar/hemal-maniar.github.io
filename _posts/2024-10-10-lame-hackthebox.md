@@ -23,6 +23,7 @@ output:
 ### Service Enumeration
 
 **Port Scan Results**
+
 Server IP Address | Ports Open
 ------------------|----------------------------------------
 10.10.10.3        | **TCP**: 21,22,139,445,3632 
