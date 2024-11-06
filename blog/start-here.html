@@ -43,7 +43,7 @@ meta-keywords: 'my life, programming, python, tutorial, data science, web develo
 
     {% for category in site.categories %}
     <h3 id="{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}" style="color: white; margin-top: 20px; line-height: 1.3em;">{{ category[0] | camelcase }}</h3>
-    <ul>
+    <ul style="color: #373737; margin-left: -20px;">
         {% assign pages_list = category[1] %}
         {% for post in pages_list %}
         {% if post.title != null %}
