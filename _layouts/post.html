@@ -14,11 +14,10 @@
     background-color: black;
     border-collapse: collapse;
     color: white;
+    line-height: 3em;
 }
 </style>
 <body>
-    {% include share-page.html %}
-
     {% include nav.html %}
 
     <div class="img-container">
@@ -30,11 +29,6 @@
         <div class="row">
             <div class="container">
                 <hr>
-                <!-- {% for tag in page.tags %}
-                <a href="{{ site.baseurl }}/blog/start-here">
-                    <p class="tag-p">{{ tag }}</p>
-                </a>
-                {% endfor %} -->
                 <p style="color: white; font-size: 1.2em; margin-top: 50px;">Written by <a style="color: white;"
                         href="{{ site.baseurl }}/blog/authors/{{ page.author }}">{% include post-meta.html author=page.author %}</a>
                 </p>

@@ -72,7 +72,7 @@ a.left2:hover {
     position: relative;
     background-color: #6d6d6d;
     color: #fff;
-    padding-top: 8.5%;
+    padding-top: 5%;
 }
 
 .bottom-left {
@@ -347,15 +347,11 @@ a.left2:hover {
     font-weight: 350;
 }
 
-table {
-    background-color: black;
-    border-collapse: collapse;
-    color: white;
-}
-
 tr, td, th {
     color: white;  
     border: 1px solid white;
+    line-height: 3em;
+    padding: 0 20px;
 }
 
 
