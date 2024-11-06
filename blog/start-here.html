@@ -35,7 +35,7 @@ meta-keywords: 'my life, programming, python, tutorial, data science, web develo
     {% endfor %}
     {% else %}
     {% for category in categories_list %}
-    <a href="#{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}"><p class="category-p" style="color: white;">{{ category[0] | camelcase }} ({{ category[1].size }})</p></a>
+    <a href="#{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}"><p class="category-p">{{ category[0] | camelcase }} ({{ category[1].size }})</p></a>
     {% endfor %}
     {% endif %}
     <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(255,255,255,.15);">
