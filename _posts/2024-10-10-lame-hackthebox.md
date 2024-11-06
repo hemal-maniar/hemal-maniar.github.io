@@ -5,8 +5,8 @@ date: 2024-10-10
 categories: ['HackTheBox', 'Walkthrough','Linux']
 comments: true
 author: Hemal Maniar
-description: Hello
-meta-description: Hello
+description: This is a walkthrough for Lame on HackTheBox. This is a part of my OSCP preparation.
+meta-description: This is a walkthrough for Lame on HackTheBox. This is a part of my OSCP preparation.
 keywords: 'lame,hackthebox,walkthrough,OSCP,tryharder'
 img: 
 alt:
