@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Cicada HackTheBox"
-date: 2024-10-11
-categories: ['HackTheBox', 'Walkthrough']
+title: ""
+date: 
+categories: ['', 'Walkthrough']
 comments: true
 author: Hemal Maniar
-description: Hello
-meta-description: Hello
-keywords: 'cicada,hackthebox,walkthrough,OSCP,tryharder'
+description: This is a walkthrough for Lame on HackTheBox. This is a part of my OSCP preparation.
+meta-description: This is a walkthrough for Lame on HackTheBox. This is a part of my OSCP preparation.
+keywords: ',,walkthrough,OSCP,tryharder'
 img: 
 alt:
 output: 
