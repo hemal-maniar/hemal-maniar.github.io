@@ -2,7 +2,7 @@
 layout: post
 title: "Cicada HackTheBox"
 date: 2024-10-11
-categories: ['HackTheBox', 'Walkthrough']
+categories: ['HackTheBox', 'Walkthrough','Linux']
 comments: true
 author: Hemal Maniar
 description: Hello
