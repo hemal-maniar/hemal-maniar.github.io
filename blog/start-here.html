@@ -26,9 +26,9 @@ meta-keywords: 'my life, programming, python, tutorial, data science, web develo
 </style>
 
 <div class="container">
-    <hr>
+    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(255,255,255,.15);">
     <h2 style="color: #33ff00;">What Do You Want To Learn About Today?</h2>
-    <hr>
+    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(255,255,255,.15);">
     {% assign categories_list = site.categories %}
     {% if categories_list.first[0] == null %}
     {% for category in categories_list %}
@@ -40,11 +40,11 @@ meta-keywords: 'my life, programming, python, tutorial, data science, web develo
     <a href="#{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}"><p class="category-p" style="color: white;">{{ category[0] | camelcase }} ({{ category[1].size }})</p></a>
     {% endfor %}
     {% endif %}
-    <hr>
+    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(255,255,255,.15);">
     {% assign categories_list = nil %}
 
     {% for category in site.categories %}
-    <h3 id="{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}" style="color: white;">{{ category[0] | camelcase }}</h3>
+    <h3 id="{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}" style="color: white; margin-top: 20px; line-height: 1.3em;">{{ category[0] | camelcase }}</h3>
     <ul>
         {% assign pages_list = category[1] %}
         {% for post in pages_list %}
