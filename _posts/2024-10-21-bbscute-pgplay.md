@@ -2,7 +2,7 @@
 layout: post
 title: "BBSCute - Proving Grounds Play"
 date: 2024-10-21
-categories: ['Linux', 'Walkthrough','PG Play']
+categories: ['Linux', 'Walkthrough']
 comments: true
 author: Hemal Maniar
 description: BBS (cute) is a great beginner friendly machine for OSCP aspirants. This machine is available on OffSec's Proving Grounds Play platform. The main purpose of this writeup is to document the steps through my journey for OSCP & to help learners establish a process.
