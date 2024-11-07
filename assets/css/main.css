@@ -137,10 +137,6 @@ a.left2:hover {
     transform: translatey(90vh);
 }
 
-.fa.fa-twitter{
-	font-family:sans-serif;
-}
-
 .fa.fa-twitter::before{
 	content:"𝕏";
 	font-size:1.2em;
