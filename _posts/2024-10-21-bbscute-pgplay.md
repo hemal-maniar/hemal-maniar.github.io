@@ -30,6 +30,7 @@ sudo nmap -sC -sV 192.168.178.128 -oA nmap -v
 ### System Enumeration
 
 **Port Scan Results**
+
 Server IP Address | Ports Open
 ------------------|----------------------------------------
 192.168.178.128   | **TCP**: 22,80,88,110,995
@@ -87,7 +88,7 @@ python exploit.py
 ```
 ![](</assets/img/posts/bbscute/Pasted image 20241021141755.png>)
 
-In the exploit prompt enter the URL `http://192.168.178.128`, and we have been dropped with a webshell. I ran the command `id` to check if it's successfully able to execute commands.
+In the exploit prompt enter the URL `http://192.168.178.128`, and we have been dropped with a webshell. I ran the command `id` to check if it's successfully able to execute commands.\
 ![](</assets/img/posts/bbscute/Pasted image 20241021141810.png>)
 
 We have a webshell running as user `www-data`. Now, I'm going to get a reverse shell from webshell for more stability. To do this, I'm first going to kick off a netcat listener on my Kali machine.
@@ -107,10 +108,11 @@ Logically, the next step is to escalate user privileges and become root user. In
 ```bash
 sudo -l
 ```
-This lists allowed commands that the current user can run as another user present within the system. 
+This lists allowed commands that the current user can run as another user present within the system.\
+\
 ![](</assets/img/posts/bbscute/Pasted image 20241021142500.png>)
 
-It looks like the current user `www-data` is able to run `/usr/sbin/hping3 --icmp` as user `root` without the need of a password. This is perfect because now we can go looking if there exists a privilege escalation vector using `hping3`. There's a great resource [GTFObins](https://gtfobins.github.io/gtfobins/hping3/) that can be utilised to browse such vectors for various binaries. It even categorises the steps based on granted permissions. In our case, we have SUDO on `hping3`.
+It looks like the current user `www-data` is able to run `/usr/sbin/hping3 --icmp` as user `root` without the need of a password. This is perfect because now we can go looking if there exists a privilege escalation vector using `hping3`. There's a great resource [GTFObins](https://gtfobins.github.io/gtfobins/hping3/) that can be utilised to browse such vectors for various binaries. It even categorises the steps based on granted permissions. In our case, we have SUDO on `hping3`.\
 ![](</assets/img/posts/bbscute/Pasted image 202410211142568.png>)
 
 I am just going to follow the recommended step and attempt to escalate my privilege. 
