@@ -6,14 +6,13 @@ meta-keywords: 'HackTheBox,blog,security blog'
 
 <div class="container">
     <hr>
-    <h2>All posts in HackTheBox</h2>
+    <h2 style="color: #3f0">All posts in HackTheBox</h2>
     <hr>
     <div class="flex-container">
         {% for post in site.categories['HackTheBox'] %}
         <div class="card" style="width: 22rem; margin: 10px 0;" data-aos="fade-up">
             <div class="card-img-top-container">
-                <a href="{{ site.url }}{{ post.url }}"><img class="card-img-top" src="{{ site.url }}{{ post.img }}"
-                        alt="{{ post.alt }}"></a>
+                <a href="{{ site.url }}{{ post.url }}"></a>
             </div>
             <div class="card-body">
                 {% for category in post.categories %}
@@ -27,7 +26,7 @@ meta-keywords: 'HackTheBox,blog,security blog'
                     <h3 class="card-post-title">{{ post.title }}</h3>
                     <p class="card-post-description">{{ post.description }}...</p>
                 </a>
-                <small class="card-post-author-date">Written by <a class="left left2" style="color: white"
+                <small class="card-post-author-date">Written by <a class="left left2" style="color: #6d6d6d"
                         href="{{ site.baseurl }}/blog/authors/{{ post.author }}"><strong>{{ post.author }}</strong></a>
                     on
                     {{ post.date | date: '%B %d, %Y' }}</small>
