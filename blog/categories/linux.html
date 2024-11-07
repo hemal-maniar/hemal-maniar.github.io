@@ -1,15 +1,15 @@
 ---
 layout: blog-default
-meta-description: 'Web development post category for Hemal Maniar computer science blog'
-meta-keywords: 'web development, computer science, tech blog'
+meta-description: 'Linux post category for Hemal Maniar.'
+meta-keywords: 'linux,blog,security blog'
 ---
 
 <div class="container">
     <hr>
-    <h2>All posts in Web Development</h2>
+    <h2>All posts in Linux</h2>
     <hr>
     <div class="flex-container">
-        {% for post in site.categories['Web Development'] %}
+        {% for post in site.categories['Linux'] %}
         <div class="card" style="width: 22rem; margin: 10px 0;" data-aos="fade-up">
             <div class="card-img-top-container">
                 <a href="{{ site.url }}{{ post.url }}"><img class="card-img-top" src="{{ site.url }}{{ post.img }}"
@@ -27,7 +27,7 @@ meta-keywords: 'web development, computer science, tech blog'
                     <h3 class="card-post-title">{{ post.title }}</h3>
                     <p class="card-post-description">{{ post.description }}...</p>
                 </a>
-                <small class="card-post-author-date">Written by <a class="left left2" style="color: #2e3141"
+                <small class="card-post-author-date">Written by <a class="left left2" style="color: white"
                         href="{{ site.baseurl }}/blog/authors/{{ post.author }}"><strong>{{ post.author }}</strong></a>
                     on
                     {{ post.date | date: '%B %d, %Y' }}</small>
