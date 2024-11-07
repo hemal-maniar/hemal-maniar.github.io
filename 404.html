@@ -27,25 +27,25 @@ permalink: /404.html
   }
 
   .category-p {
-        color: #2e3141;
+        color: #3f0;
         display: inline-block;
-        border: 1px solid #2e3141;
-        border-radius: 5px;
-        padding: 5px;
-        margin-right: 5px;
+        border: 1px solid #3f0;
+        border-radius: 100px;
+        padding: 5px 10px;
+        margin-right: 10px;
     }
 
     .category-p:hover {
         background-color: #2e3141;
-        border: 1px solid #fff;
-        color: #fff;
+        border: 1px solid #3f0;
+        color: #3f0;
     }
 </style>
 
-<div class="container">
+<div class="container" style="color: white;">
   <h1>404</h1>
   <p><strong>Page not found :(</strong></p>
-  <p>I couldn't find the page you are looking for. Go back <a class="left left2" href="/blog">home</a> or explore some
+  <p>I couldn't find the page you are looking for. Go back <a class="left left2" href="/blog" style="color: #6d6d6d;">home</a> or explore some
     categories below!</p>
     {% assign categories_list = site.categories %}
     {% if categories_list.first[0] == null %}
