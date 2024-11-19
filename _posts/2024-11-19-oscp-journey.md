@@ -26,7 +26,8 @@ When I initially started out, one of the first questions I had in my head was **
 
 To answer the question, I think the exam demands anywhere between 4-6 months of dedicated learning. Shorter if you've been solving boxes consistently on HackTheBox or some other platform of choice. OSCP is designed to be CTF-styled so there are quite some similarities between what goes into the process while solving boxes on other platforms. The time will surely vary based on learner's experience and time given to practice. I had laid out a plan to do it over a span of 5 months that included 90 days of OSCP course material along with labs.
 
-## Plan
+### Plan
+
 
 | Month | Duration | Module |
 |--------|---------|---------|
@@ -40,7 +41,7 @@ TJ null's list ([NetSecFocus Trophy Room](https://docs.google.com/spreadsheets/u
 
 Another one is a hidden gem that I found via a Reddit post and is made by LainKusanagi ([Lainkusanagi OSCP list](https://docs.google.com/spreadsheets/d/18weuz_Eeynr6sXFQ87Cd5F0slOj9Z6rt/edit?gid=487240997#gid=487240997)). I have found these machines to be more in line with similarities to OSCP machines. While this is a fairly recently made, it's being constantly updated as new machines get released on HackTheBox or any other platform.
 
-## Notes
+### Notes
 
 Now that I've got the timeline out of the way, next important thing is notes. I cannot stress enough how crucial this part is through the process. Not just with respect to the exam, but just as a general rule of thumb when conducting penetration testing exercise. In a professional setting, you want to make a note of everything you see during your pentest to be included in the report.
 
@@ -54,7 +55,7 @@ Now that I've got the timeline out of the way, next important thing is notes. I 
 - [Greenshot](https://getgreenshot.org/)
 - [Flameshot](https://flameshot.org/)
 
-## Mindset
+### Mindset
 
 The journey has taught me a lot; one of which includes developing the right mindset. OffSec wants the learner to build "Try Harder" mantra. They want you to be persistent, creative, and perceptive. These are key to cracking any OffSec Certifications as it teaches the learner to be patient, to trust the process, and to keep trying harder. These 5 months have been pivotal to discover flaws in my methods, fix, and surpass the hurdles. I used to make the rookie mistake of not spending time on enumerating a target, but instead jump onto the exciting part of running an exploit and gaining access to a system. But I have learnt to be patient, gather as much information as possible, rationally think about possible attack vectors before proceeding to the next stage. 
 
@@ -68,11 +69,11 @@ Here are a few pointers that I would like you to keep in mind as you embark on y
 5. Pivot, pivot, pivot! Get used to pivoting as it's going to be useful during Active Directory exercises involving different network interfaces.
 6. And finally, "**Try Harder**"!
 
-## PEN-200
+### PEN-200
 
 I took the 90-day lab access that gave me access to course content and lab exercises for 90 days. Once I got the access, I set out a plan for myself to try & finish the coursework within the first 60 days. This includes modules and assignments provided within the modules. And 30 days for labs provided by OffSec - that includes 3 mock exam sets and 3 sets of challenge labs. The challenge labs gives you a mock scenario mimicking a small enterprise company. They provide great experience to prepare yourself before the exam! I wish to make another post about my exam experience.  
 
-## Important Links
+### Important Links
 
 This is just a list of links that I have found to be important. I will also be posting a cheatsheet covering my own list of important commands that I made use of.
 
@@ -85,6 +86,6 @@ This is just a list of links that I have found to be important. I will also be p
 7. [AD Pentest Cheatsheet](https://mayfly277.github.io/assets/blog/pentest_ad_dark.svg)
 8. [Ligolo](https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740)
 9. [GitHub - cube0x0/cube0x0.github.io: Windows stuff](https://github.com/cube0x0/cube0x0.github.io)
-10. [OSCP Cheatsheet | Sai Sathvik](https://s4thv1k.com/posts/oscp-cheatsheet/#lateral-movement-in-active-directory)
+10. [OSCP Cheatsheet by Sai Sathvik](https://s4thv1k.com/posts/oscp-cheatsheet/#lateral-movement-in-active-directory)
 
 The journey to trying harder has been one full of multiple challenges, but I do appreciate the process I have gone through. I have learnt a lot, improved a lot, and it only makes me want to keep growing. Next step - OSWE!

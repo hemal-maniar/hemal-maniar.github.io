@@ -580,6 +580,9 @@ pre {
 
 /* li */
 
+li {
+    color: white;
+}
 .kr {
     margin-top: 2em;
 }
