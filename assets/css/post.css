@@ -297,6 +297,13 @@ a.left2:hover {
         width: 100%;
         padding: 0 10px;
     }
+
+    .img-container {
+        width: 100%;
+        position: relative;
+        color: #fff;
+        padding-top: 20%;
+    }
 }
 
 /* new stuff */
