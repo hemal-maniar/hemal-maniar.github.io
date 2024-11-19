@@ -358,7 +358,10 @@ tr, td, th {
     padding: 0 20px;
 }
 
-
+img {
+    max-width: 100%; 
+    height: auto;
+}
 /* nav padding for blog-default.html */
 
 .padding-for-nav {
