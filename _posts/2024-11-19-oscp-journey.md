@@ -28,6 +28,7 @@ To answer the question, I think the exam demands anywhere between 4-6 months of 
 
 ### Plan
 \
+
 | Month | Duration | Module |
 |--------|---------|---------|
 | February 2024 | 1 month | OffSec Playground Play & Practice machines |
