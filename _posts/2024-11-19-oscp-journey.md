@@ -24,8 +24,11 @@ Hello folks, in today's blog I am going to cover my journey through earning my O
 
 When I initially started out, one of the first questions I had in my head was **How long will it take to get my OSCP?** Since it is considered one of the best in the industry for what it has to offer, as a learner you want to obtain it as quickly as possible because we know that it's a massive milestone (at least for myself) and it will help boost the chances of getting a job. 
 
+<div id="gif">
+
 ![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fe96b7030-83e5-4464-8e26-a6e3f8aab825_400x225.gif)
 
+</div>
 
 To answer the question, I think the exam demands anywhere between 4-6 months of dedicated learning. Shorter if you've been solving boxes consistently on HackTheBox or some other platform of choice. OSCP is designed to be CTF-styled so there are quite some similarities between what goes into the process while solving boxes on other platforms. The time will surely vary based on learner's experience and time given to practice. I had laid out a plan to do it over a span of 5 months that included 90 days of OSCP course material along with labs.
 
@@ -55,7 +58,11 @@ Now that I've got the timeline out of the way, next important thing is notes. I 
 - [CherryTree](https://www.giuspen.net/cherrytree/) - Offers rich-text editing, syntax highlighting (which is great for code), and follows hierarchical approach. 
 - [Obsidian](https://obsidian.md/download) - Hands down, the best I have used. Note taking in markdown format with support for code blocks, interlinking, with plugin support to customise your user flow. I always thought of myself as a poor note-taker when I saw others' work, but Obsidian has honestly made my life so much easier!
 
+<div id="gif">
+
 ![](https://media1.tenor.com/m/MzuUWwZa770AAAAd/ryan-howard-bj-novak.gif)
+
+</div>
 
 2. Next is a good application to take screenshot. Default screenshot application for Windows & Kali Linux works great but I prefer to use third-party tools that offer nifty useful features. You cannot go wrong with either but I prefer Flameshot.
 - [Greenshot](https://getgreenshot.org/)
@@ -65,7 +72,11 @@ Now that I've got the timeline out of the way, next important thing is notes. I 
 
 The journey has taught me a lot; one of which includes developing the right mindset. OffSec wants the learner to build "Try Harder" mantra. They want you to be persistent, creative, and perceptive. These are key to cracking any OffSec Certifications as it teaches the learner to be patient, to trust the process, and to keep trying harder. These 5 months have been pivotal to discover flaws in my methods, fix, and surpass the hurdles. I used to make the rookie mistake of not spending time on enumerating a target, but instead jump onto the exciting part of running an exploit and gaining access to a system. But I have learnt to be patient, gather as much information as possible, rationally think about possible attack vectors before proceeding to the next stage. 
 
+<div id="gif">
+
 ![](https://media1.tenor.com/m/1V8TBpwQ41MAAAAC/michael-scott-the-office.gif)
+
+</div>
 
 Here are a few pointers that I would like you to keep in mind as you embark on your journey.
 1. Do not hesitate to **refer** to walkthroughs available online. Whenever you feel stuck, use walkthroughs to your advantage. It either,
@@ -110,7 +121,11 @@ In my approach, I completed MEDTECH & RELIA to get comfortable with the style of
 
 I am planning to make a post about my exam experience soon!
 
+<div id="gif">
+
 ![](https://gifsec.com/wp-content/uploads/2023/01/the-office-gif-35.gif)
+
+</div>
 
 ### Important Links
 

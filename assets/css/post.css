@@ -681,7 +681,7 @@ li {
 	font-size:1.2em;
 }
 
-img {
+#gif {
     max-width: 400px;
     max-height: 400px;
     width: auto;
@@ -691,7 +691,7 @@ img {
 }
 
 @media (max-width: 376px) {
-    img {
+    #gif {
       max-width: 100%;
       height: auto;
     }
