@@ -27,8 +27,7 @@ When I initially started out, one of the first questions I had in my head was **
 To answer the question, I think the exam demands anywhere between 4-6 months of dedicated learning. Shorter if you've been solving boxes consistently on HackTheBox or some other platform of choice. OSCP is designed to be CTF-styled so there are quite some similarities between what goes into the process while solving boxes on other platforms. The time will surely vary based on learner's experience and time given to practice. I had laid out a plan to do it over a span of 5 months that included 90 days of OSCP course material along with labs.
 
 ### Plan
-
-
+\
 | Month | Duration | Module |
 |--------|---------|---------|
 | February 2024 | 1 month | OffSec Playground Play & Practice machines |
