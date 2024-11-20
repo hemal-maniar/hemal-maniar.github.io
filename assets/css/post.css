@@ -673,3 +673,10 @@ li {
     color: #33ff00;
     border-radius: 5px;
 }
+
+/* Footer */
+
+.fa.fa-twitter::before{
+	content:"𝕏";
+	font-size:1.2em;
+}
