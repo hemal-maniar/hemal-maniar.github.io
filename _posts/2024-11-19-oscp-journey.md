@@ -50,7 +50,6 @@ Now that I've got the timeline out of the way, next important thing is notes. I 
 - [Obsidian](https://obsidian.md/download) - Hands down, the best I have used. Note taking in markdown format with support for code blocks, interlinking, with plugin support to customise your user flow. I always thought of myself as a poor note-taker when I saw others' work, but Obsidian has honestly made my life so much easier!
 
 2. Next is a good application to take screenshot. Default screenshot application for Windows & Kali Linux works great but I prefer to use third-party tools that offer nifty useful features. You cannot go wrong with either but I prefer Flameshot.
-
 - [Greenshot](https://getgreenshot.org/)
 - [Flameshot](https://flameshot.org/)
 
