@@ -31,7 +31,8 @@ To answer the question, I think the exam demands anywhere between 4-6 months of 
 
 You can view my credentials [here](https://www.credential.net/b8bc459f-4860-4c16-a00f-7a1eabbbd438).
 
-### Plan <br />
+### Plan 
+<br />
 
 | Month | Duration | Module |
 |--------|---------|---------|
