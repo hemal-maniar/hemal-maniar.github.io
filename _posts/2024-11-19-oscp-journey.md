@@ -22,7 +22,7 @@ output:
 
 Hello folks, in today's blog I am going to cover my journey through earning my Offensive Security Certified Professional (OSCP) certification and the process that went behind the scenes.
 
-When I initially started out, one of the first questions I had in my head was **How long will it take to get my OSCP?**. Since it is considered one of the best in the industry for what it has to offer, as a learner you want to obtain it as quickly as possible because we know that it's a massive milestone (at least for myself) and it will help boost the chances of getting a job. 
+When I initially started out, one of the first questions I had in my head was **How long will it take to get my OSCP?** Since it is considered one of the best in the industry for what it has to offer, as a learner you want to obtain it as quickly as possible because we know that it's a massive milestone (at least for myself) and it will help boost the chances of getting a job. 
 
 To answer the question, I think the exam demands anywhere between 4-6 months of dedicated learning. Shorter if you've been solving boxes consistently on HackTheBox or some other platform of choice. OSCP is designed to be CTF-styled so there are quite some similarities between what goes into the process while solving boxes on other platforms. The time will surely vary based on learner's experience and time given to practice. I had laid out a plan to do it over a span of 5 months that included 90 days of OSCP course material along with labs.
 
@@ -32,7 +32,7 @@ To answer the question, I think the exam demands anywhere between 4-6 months of 
 | Month | Duration | Module |
 |--------|---------|---------|
 | February 2024 | 1 month | OffSec Playground Play & Practice machines |
-| March 2024 | 1 month | HackTheBox |
+| March 2024 | 1 month | HackTheBox & TryHackMe |
 | 12th April to 12th July 2024 | 3 months | Official PEN-200 |
 
 While the official PEN-200 coursework systematically guides learners through the entire penetration testing process, the journey leading up to that point is quite challenging. There’s no tracking of progress, and there’s nothing to help learners stay focused on the necessary skills and knowledge required for OSCP. In this case, a list of vulnerable OSCP-like machines were extremely valuable.
@@ -67,11 +67,40 @@ Here are a few pointers that I would like you to keep in mind as you embark on y
 3. Gather resources along the way including cheatsheets, interesting payloads, exploit techniques, and **your own notes**. 
 4. Try to build your own roadmap that can help you take a methodical approach.
 5. Pivot, pivot, pivot! Get used to pivoting as it's going to be useful during Active Directory exercises involving different network interfaces.
-6. And finally, "**Try Harder**"!
+6. It's okay to take a breather and space away from the daily routine of cracking vulnerable machines. It gets exhausting at times; spend time with your friends and family
+7. You will start noticing patterns in your approach where you can try to automate simple tasks that can ease your workflow.
+8. Expand your skillset to other tools that can make the job much easier. For example, I had become comfortable with pivoting using reverse SSH port forwarding combined with proxychains during my practice. Unfortunately during the exam, my method did not work and that's when I used [Ligolo-ng](https://github.com/nicocha30/ligolo-ng) to get the job done.
+9. Do not give up when you hit a roadblock during the exam. If you can't figure out the solution, walk away and come back. 
+10. And finally, "**Try Harder**"!
 
-### PEN-200
+### Preparation
 
-I took the 90-day lab access that gave me access to course content and lab exercises for 90 days. Once I got the access, I set out a plan for myself to try & finish the coursework within the first 60 days. This includes modules and assignments provided within the modules. And 30 days for labs provided by OffSec - that includes 3 mock exam sets and 3 sets of challenge labs. The challenge labs gives you a mock scenario mimicking a small enterprise company. They provide great experience to prepare yourself before the exam! I wish to make another post about my exam experience.  
+#### OffSec Playground Play & Practice machines
+
+In the first month of practice, I targeted OffSec Playground that host free & paid machines. The free machines are taken from VulnHub but hosted by OffSec for ease of use. The free access allows you to gain access for 3 hours in a 24 hour period. Whenever I was in a cooldown period, I would spin it up locally on VMware or Virtual Box. I followed the list provided by TJ null to target these machines one by one. I solved about 50-odd Playground machines and took notes using CherryTree. Check them out [here](https://github.com/hemal-maniar/OSCP-prep-ctb).
+
+#### HackTheBox & TryHackMe
+
+After doing a decent amount of machines on OffSec Playground, I moved onto HackTheBox & TryHackMe to solve vulnerable machines mentioned under TJ null & LainKusanagi list. I would recommend you to get premium subscription on both of these platforms as most of the machines have retired and will require premium subscription to gain access. Over a period of time, I solved about 35 machines on HackTheBox and 18 on TryHackMe. I moved over to Obsidian to take down my notes and it was an absolute blessing! 
+
+- [HackTheBox Notes](https://github.com/hemal-maniar/OSCP-prep-HackTheBox)
+- [TryHackMe Notes](https://github.com/hemal-maniar/OSCP-prep-TryHackMe)
+
+#### PEN-200
+
+I took the 90-day lab access that gave me access to course content and lab exercises for 90 days. Once I got the access, I set out a plan for myself to try & finish the coursework within the first 60 days. This includes modules and assignments provided within the modules. And 30 days for labs provided by OffSec - that includes 3 mock exam sets and 3 sets of challenge labs. The challenge labs gives you a mock scenario mimicking a small enterprise company. They provide great experience to prepare yourself before the exam! 
+
+Official Lab Set:
+- MEDTECH
+- RELIA
+- SKYLARK
+- OSCP A
+- OSCP B
+- OSCP C
+
+In my approach, I completed MEDTECH & RELIA to get comfortable with the style of challenge labs. I thoroughly enjoyed doing them as it provides a great exposure to Active Directory environments and how you can navigate your way around it to gather information and move ahead. Now that I was ready to take the mock exam, I limited myself to a 24-hour window. OSCP-A took me about 14 hours to finish, OSCP-B felt relatively easier and took me 10 hours and I managed to successfully finish OSCP-C within 8 hours. I made sure to give myself a day or two off after taking mock exam attempt. I couldn't finish all of SKYLARK but managed to finish half of it before losing access to OSCP lab environment.
+
+I am planning to make a post about my exam experience.
 
 ### Important Links
 
@@ -87,5 +116,13 @@ This is just a list of links that I have found to be important. I will also be p
 8. [Ligolo](https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740)
 9. [GitHub - cube0x0/cube0x0.github.io: Windows stuff](https://github.com/cube0x0/cube0x0.github.io)
 10. [OSCP Cheatsheet by Sai Sathvik](https://s4thv1k.com/posts/oscp-cheatsheet/#lateral-movement-in-active-directory)
+11. [Buffer Overflow](https://www.ctfnote.com/red-teaming/buffer-overflow/step-4-finding-bad-characters)
+12. [SQL Injection](https://medium.com/hacker-toolbelt/sqlmap-cheat-sheet-e5a38300b50)
+13. [OSCP Tricks](https://github.com/rodolfomarianocy/OSCP-Tricks-2023)
+14. [Enumeration](https://systemweakness.com/crackmapexec-smb-ad-enumeration-simplified-21e603927f44)
+15. [Reverse shell](https://www.revshells.com/)
+16. [Disk Group Privilege Escalation](https://vk9-sec.com/disk-group-privilege-escalation/)
+17. [Apache2 conf Privilege Escalation](https://exploit-notes.hdks.org/exploit/linux/privilege-escalation/apache-conf-privilege-escalation/)
+18. [Windows Privilege Escalation](https://rednode.com/privilege-escalation/windows-privilege-escalation-cheat-sheet/)
 
 The journey to trying harder has been one full of multiple challenges, but I do appreciate the process I have gone through. I have learnt a lot, improved a lot, and it only makes me want to keep growing. Next step - OSWE!
