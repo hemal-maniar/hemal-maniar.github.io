@@ -1,0 +1,120 @@
+---
+layout: blog-default
+meta-description: 'This is the about section for Hemal Maniar - A Computer Science Blog. Ben is a blogger, developer, student, and has
+a passion for communicating ideas.'
+meta-keywords: 'about Hemal Maniar, about programming, about blogs'
+---
+
+<style>
+    #about h2 {
+        text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
+        color: #2e3141;
+    }
+
+    .parent-about {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .div1-about {
+        grid-area: 1 / 1 / 2 / 2;
+        padding: 5%;
+    }
+
+    .div2-about {
+        grid-area: 1 / 2 / 2 / 3;
+        padding: 5%;
+    }
+
+    @media screen and (max-width: 969px) {
+        .parent-about {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1-about {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2-about {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+    }
+
+    tr {
+        border-bottom: 1px solid #2e3141;
+    }
+
+    .tr-last {
+        border-bottom: none;
+    }
+
+    td,
+    th {
+        padding: 20px 30px 20px 0;
+    }
+
+    th {
+        float: left;
+        /* safari fix */
+    }
+</style>
+
+<div class="container">
+    <h1>About Me</h1>
+    <hr>
+
+    <section id="about">
+        <div class="parent-about">
+            <div class="div1-about" data-aos="fade-up">
+                <h2>My Story</h2>
+                <p>I was born in Middletown, CT. From a young age I was into sports and learning. I took my first
+                    computer science class in
+                    high school and decided to major in computer science in college. I taught myself how to code
+                    websites with HTML and CSS
+                    and from there learned many other technologies, languages, and frameworks.</p>
+                <p>I loved to code so much that I started this blog website dedicated
+                    to it. This site, along with my personal website, is constantly evolving as I learn more skills
+                    or think of a cool new design to implement.
+                </p>
+            </div>
+            <div class="div2-about" data-aos="fade-up" data-aos-delay="200">
+                <h2>A Brief History</h2>
+                <table>
+                    <tr>
+                        <td>2018 - Current</td>
+                        <th>Pursuing a Computer Science Degree, CCSU</th>
+                    </tr>
+                    <tr>
+                        <td>2019 Summer</td>
+                        <th>Software Developer Intern, Law Forum, LLC</th>
+                    </tr>
+                    <tr>
+                        <td>2018 Summer</td>
+                        <th>I.T. Intern, Middletown, CT City Hall</th>
+                    </tr>
+                    <tr class="tr-last">
+                        <td>2017 - 2018</td>
+                        <th>Took first Computer Science class</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

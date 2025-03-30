@@ -1,0 +1,60 @@
+---
+
+---
+<head>
+    {% include header.html %}
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/post.css">
+    <!-- meta tags -->
+    <meta name="description" content="{{ page.meta-description }}">
+    <meta name="keywords" content="{{ page.keywords }}">
+</head>
+<style>
+    table {
+    background-color: black;
+    border-collapse: collapse;
+    color: white;
+    line-height: 3em;
+}
+</style>
+<body>
+    {% include nav.html %}
+
+    <div class="img-container">
+        {% include post-featured-image.html alt=page.alt title=page.title categories=page.categories author=page.author date=page.date %}
+    </div>
+
+    <div class="blog-post-container">
+        {{ content }}
+    </div>
+    <!--
+    <div class="row-next-prev-posts">
+        <div class="col-lg next-prev-img-col">
+            {% if page.previous.url %}
+            <a href="{{ page.previous.url }}">
+                <div class="centered" style="text-align: right">
+                    <a href="{{ page.previous.url }}">
+                        <p>Previous Post</p>
+                    </a>
+                    <a style="font-size: 1.7em" href="{{ page.previous.url }}">&laquo; {{page.previous.title}}</a>
+                </div>
+            </a>
+            {% endif %}
+        </div>
+        <div class="col-lg next-prev-img-col">
+            {% if page.next.url %}
+            <a href="{{ page.next.url }}">
+                <div class="centered">
+                    <a href="{{ page.next.url }}">
+                        <p>Next Post</p>
+                    </a>
+                    <a style="font-size: 1.7em" href="{{ page.next.url }}">{{page.next.title}} &raquo;</a>
+                </div>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    -->
+    {% include footer.html %}
+    {% include footer-files.html %}
+</body>

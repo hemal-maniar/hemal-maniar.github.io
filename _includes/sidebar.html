@@ -1,0 +1,84 @@
+<!-- <style>
+    .westgate-img-container {
+        height: 200px;
+        width: 100%;
+    }
+
+    .sidebar-hide {
+        padding: 0;
+        margin: 0;
+    }
+
+    .westgate-text {
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    .westgate-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+    .bens-favorites-p {
+        color: #2e3141;
+        text-align: center;
+        padding: 10px 0;
+        font-weight: bold;
+    }
+
+    .img-container-sidebar-main {
+        width: 100%;
+        height: 200px;
+        margin: 10px 0;
+    }
+
+    .img-container-sidebar-secondary {
+        width: 100%;
+        height: 125px;
+        margin: 10px 0;
+    }
+
+    .img-sidebar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container sidebar-hide">
+    <!-- Westgate Vacation -->
+    <a style="color: #2e3141" target="_blank" href="https://www.westgatereservations.com/9258829060/">
+        <p class="westgate-text" data-aos="fade-up">Save big on a Westgate Vacation!</p>
+        <div class="westgate-img-container">
+            <img class="westgate-img" data-aos="fade-up" src="{{ site.baseurl }}/assets/img/blog/westgate.jpg"
+                alt="Westgate Vacation" width="100%" height="100%">
+        </div>
+    </a>
+
+    <!-- Ben's Favorites -->
+    <p class="bens-favorites-p" data-aos="fade-up">Ben's Favorites</p>
+    {% for post in site.posts limit: 1 %}
+    <p style="font-weight: bold;" data-aos="fade-up">{{ post.title }}</p>
+    <a href="{{ site.url }}{{ post.url }}"></a>
+    <div data-aos="fade-up" class="img-container-sidebar-main">
+        <a href="{{ site.url }}{{ post.url }}">
+            <img class="img-sidebar" src="{{ site.url }}{{ post.img }}" alt="">
+        </a>
+    </div>
+    {% endfor %}
+    {% for post in site.posts limit: 2 offset : 1 %}
+    <p style="font-weight: bold;" data-aos="fade-up">{{ post.title }}</p>
+    <div data-aos="fade-up" class="img-container-sidebar-secondary">
+        <a href="{{ site.url }}{{ post.url }}">
+            <img class="img-sidebar" src="{{ site.url }}{{ post.img }}" alt="">
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<div data-aos="fade-up">
+    {% include sidebar-ad.html %}
+</div> -->

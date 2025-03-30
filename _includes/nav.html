@@ -1,0 +1,180 @@
+<style>
+    .links {
+        padding: 0;
+        margin: 0;
+        float: left;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .links ul {
+        display: inline-block;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .links ul li {
+        list-style-type: none;
+        float: left;
+        padding: 6px 15px 0 0;
+        font-size: 20px;
+    }
+
+    .links ul li:hover {
+        transition: 0.7s;
+        transform: rotateX(360deg);
+    }
+
+    /* before */
+    .links ul li a {
+        color: #fff !important;
+    }
+
+    /* after */
+    .links-after ul li a {
+        color: #2e3141 !important;
+    }
+
+    .links ul li a:hover {
+        color: #516096;
+    }
+
+    .navbar-inner {
+        background: transparent !important;
+    }
+
+    .navbar-brand {
+        color: #2e3141 !important;
+    }
+
+    .navbar-collapse li a {
+        color: #2e3141 !important;
+    }
+
+    a.left {
+        position: relative;
+    }
+
+    a.left:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    a.left:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    a.left2:before {
+        background-color: #2e3141;
+    }
+
+    a.left2:hover {
+        color: #2e3141;
+    }
+
+    nav {
+        width: 80%;
+        margin: auto;
+    }
+
+    .navbar-brand img {
+        width: 30;
+        height: 30;
+    }
+
+    @media screen and (max-width: 426px) {
+        .brand-hide {
+            display: none !important;
+        }
+
+        .navbar-brand img {
+            width: 50;
+            height: 50;
+        }
+    }
+
+    #navbar {
+        transition: top 0.3s;
+        z-index: 10;
+        position: fixed;
+        width: 100%;
+        margin: auto;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+        background-color: white;
+    }
+
+    .nav-top {
+        background-color: rgba(255, 255, 255, 0) !important;
+    }
+
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 10px;
+    }
+</style>
+
+<nav class="navbar navbar-expand-xl navbar-light" id="navbar">
+    <div class="container">
+        <a class="navbar-brand left left2" href="https://hemal-maniar.github.io">
+            <img src="{{ site.baseurl }}/assets/img/site.png" class="d-inline-block align-top" alt=""><span
+                class="brand-hide"> {{ site.title }}</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link left left2 active" href="https://hemal-maniar.github.io">Home</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link left left2" href="{{ site.baseurl }}/blog/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link left left2" href="{{ site.baseurl }}/blog/cheatsheets/">Cheat Sheets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link left left2" target="_blank" href="{{ site.baseurl }}/">My Site</a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link left left2" href="{{ site.baseurl }}/blog">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link left left2" href="{{ site.baseurl }}/blog/start-here">Categories</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+
+        // if (prevScrollpos === 0) { //user scrolled to the top of the page
+        //     document.getElementById("navbar").classList.add("nav-top")
+        // } else {
+        //     document.getElementById("navbar").classList.remove("nav-top")
+        // }
+    }
+</script>-->

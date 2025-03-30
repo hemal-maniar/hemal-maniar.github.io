@@ -1,0 +1,101 @@
+<style>
+    a.left {
+        position: relative;
+        color: #2e3141;
+    }
+
+    a.left:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    a.left:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+
+    a.left2:before {
+        background-color: #2e3141;
+    }
+
+    a.left2:hover {
+        color: #2e3141;
+    }
+
+    .links2 {
+    text-align: center;
+    animation: fade_in 1.5s;
+    }
+
+    .links2 ul {
+        display: inline-block;
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    .links2 ul li {
+        list-style-type: none;
+        float: left;
+        padding: 30px 10px 0 5px;
+        font-size: 30px;
+    }
+
+    .fa {
+    color: black;
+    }
+
+    /* Footer */
+
+    .fa.fa-twitter::before{
+        content:"𝕏";
+        font-size:1.2em;
+    }
+    
+    .grow {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+        transition-property: transform;
+    }
+</style>
+
+<div style="background-color: white;"><!-- position: fixed; left: 0; bottom: 0; width: 100%;-->
+    <div class="links2">
+        <ul>
+            <li>
+                <div class="grow"><a href="http://github.com/hemal-maniar" target="_blank"><i
+                            class="fa fa-github"></i></a>
+                </div>
+            </li>
+            <li>
+                <div class="grow"><a href="https://twitter.com/he_malware" target="_blank"><i
+                            class="fa fa-twitter"></i></a></div>
+            </li>
+            <li>
+                <div class="grow"><a href="https://www.linkedin.com/in/hemal-maniar" target="_blank"><i
+                            class="fa fa-linkedin"></i></a></div>
+            </li>
+            <li>
+                <div class="grow"><a href="https://hemal-maniar.github.io/assets/HemalManiar_Resume.pdf" target="_blank"><i
+                            class="fa fa-file-pdf-o"></i></a></div>
+            </li>
+            <li>
+                <div class="grow"><a href="mailto:maniar.he@gmail.com" target="_blank"><i
+                            class="fa fa-envelope"></i></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <p style="text-align: center; padding-bottom: 30px; padding-top: 20px;">2024 - 2024 | <a target="_blank" class="left left2" href="/">Hemal Maniar</a></p>
+</div>

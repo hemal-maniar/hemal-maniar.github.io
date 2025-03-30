@@ -1,0 +1,26 @@
+---
+
+---
+
+<head>
+    {% include header.html %}
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/cheatsheets.css">
+    <!-- meta tags -->
+    <meta name="description" content="{{ page.meta-description }}">
+    <meta name="keywords" content="{{ page.meta-keywords }}">
+</head>
+
+<body>
+    <!-- Navigation -->
+    {% include nav.html %}
+
+    <!-- Main Content -->
+    <div class="padding-for-nav">
+        {{ content }}
+    </div>
+
+    <!-- Footer and footer files -->
+    {% include footer.html %}
+    {% include footer-files.html %}
+</body>

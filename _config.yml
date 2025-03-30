@@ -1,0 +1,14 @@
+title: Hemal Maniar
+email: maniar.he@gmail.com
+# baseurl: "" the subpath of your site, e.g. /blog
+url: "https://hemal-maniar.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: he_malware
+github_username:  hemal-maniar
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class   : 'syntax'
+google_analytics: G-12F87QPXQJ  

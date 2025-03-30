@@ -1,0 +1,14 @@
+/* General Styles */
+
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+    color: #2e3141;
+}
+
+/* Padding for nav */
+.padding-for-nav {
+    padding-top: 100px;
+}

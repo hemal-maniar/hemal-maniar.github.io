@@ -1,0 +1,91 @@
+<style>
+    .container-img-include {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .centered {
+        display: block;
+        margin-left: 20.6%;
+    }
+
+    .centered h1 {
+        font-size: 4em;
+    }
+
+    .category-p {
+        color: #fff;
+        display: inline-block;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 5px;
+    }
+
+    .category-p:hover {
+        background-color: #2e3141;
+        border: 1px solid #2e3141;
+    }
+
+    @media screen and (max-width: 769px) {
+        .centered h1 {
+            font-size: 2em;
+        }
+    }
+
+    @media screen and (max-width: 426px) {
+        .centered h1 {
+            font-size: 2.5em;
+        }
+    }
+
+    @media screen and (max-width: 376px) {
+        .centered h1 {
+            font-size: 2em;
+        }
+
+        .category-p {
+            display: inline-block;
+            padding: 2px;
+            margin-right: 2px;
+        }
+
+        .centered {
+            width: 90%;
+        }
+    }
+
+    a.left {
+        position: relative;
+    }
+
+    a.left:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    a.left:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+</style>
+
+<div class="centered" style="color: #33ff00;">
+    {% for category in include.categories%}
+    <a href="/blog/categories/{{ category | downcase | url_escape | strip | replace: ' ', '-' }}">
+        <p class="category-p" style="color: #33ff00; margin-right: 10px; border-radius: 100px; padding: 5px 10px; border: 1px solid;">{{ category }}</p>
+    </a>
+    {% endfor %}
+    <h1>{{ include.title }}</h1>
+    <p>By <a class="left" style="color: #33ff00"
+            href="{{ site.baseurl }}/blog/authors/{{ include.author }}"><strong>{{ include.author }}</strong></a> |
+        {{ include.date | date: '%B %d, %Y' }}</p>
+</div>

@@ -1,0 +1,66 @@
+---
+permalink: /404.html
+<!-- layout: default -->
+---
+
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/post.css">
+
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  @media screen and (max-width: 426px) {
+    .container {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .category-p {
+        color: #3f0;
+        display: inline-block;
+        border: 1px solid #3f0;
+        border-radius: 100px;
+        padding: 5px 10px;
+        margin-right: 10px;
+    }
+
+    .category-p:hover {
+        background-color: #2e3141;
+        border: 1px solid #3f0;
+        color: #3f0;
+    }
+</style>
+
+<div class="container" style="color: white;">
+  <h1>404</h1>
+  <p><strong>Page not found :(</strong></p>
+  <p>I couldn't find the page you are looking for. Go back <a class="left left2" href="/blog" style="color: #6d6d6d;">home</a> or explore some
+    categories below!</p>
+    <hr style="border: 1px solid white;">
+    {% assign categories_list = site.categories %}
+    {% if categories_list.first[0] == null %}
+    {% for category in categories_list %}
+    <a href="#{{ category | downcase | downcase | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }}
+      ({{ site.tags[category].size }})</a>
+    {% endfor %}
+    {% else %}
+    {% for category in categories_list %}
+    <a href="/blog/categories/{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}">
+      <p class="category-p">{{ category[0] | camelcase }} ({{ category[1].size }})</p>
+    </a>
+    {% endfor %}
+    {% endif %}
+    <hr>
+    {% assign categories_list = nil %}
+</div>

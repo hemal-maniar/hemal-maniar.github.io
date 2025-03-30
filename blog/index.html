@@ -1,0 +1,30 @@
+---
+layout: blog-default
+meta-description: 'Hemal Maniar - '
+meta-keywords: 'computer science blog, learn python, technology blog'
+---
+
+<div class="container">
+    <div class="eo gf fe r">
+        <h3 data-aos="fade-up" style="color: #33ff00;">Recently Posted</h3>
+        <hr style="border-bottom: 1px solid rgba(255,255,255,0.15)">
+    </div>
+    {% for post in site.posts limit:10 offset:0 %}
+    <div class="eo gf fe r" data-aos="fade-up">
+        <!--
+        <a href="{{ site.url }}{{ post.url }}">
+            <img src="{{ post.img }}" alt="" width="200px" height="100px" style="object-fit: cover;">
+        </a>-->
+        <a href="{{ site.url }}{{ post.url }}">
+            <h3 class="p-title ap q er bg es bh gn go gp as av gq bs gr au fp" style="color: white;">{{ post.title }}</h3>
+            <p class="fy fx fn aaa">{{ post.description }}...</p>
+        </a>
+        <p class="p-date-author-category" style="color: #6d6d6d;">Posted by <a class="left left2" style="color: #6d6d6d;" 
+                href="{{ site.baseurl }}/blog/authors/{{ post.author }}">{{ post.author }}</a> in <a class="left left2" style="color: #6d6d6d;"
+                href="/blog/categories/{{ post.categories[0] | downcase | url_escape | strip | replace: ' ', '-' }}">{{ post.categories[0] }}</a>
+            on {{ post.date | date: '%B %d, %Y' }}
+        </p> 
+        <hr style="border-bottom: 1px solid rgba(255,255,255,0.15)">
+    </div>
+    {% endfor %}
+</div>

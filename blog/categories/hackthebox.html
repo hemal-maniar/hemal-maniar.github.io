@@ -1,0 +1,37 @@
+---
+layout: blog-default
+meta-description: 'HackTheBox post category for Hemal Maniar.'
+meta-keywords: 'HackTheBox,blog,security blog'
+---
+
+<div class="container">
+    <hr>
+    <h2 style="color: #3f0">All posts in HackTheBox</h2>
+    <hr>
+    <div class="flex-container">
+        {% for post in site.categories['HackTheBox'] %}
+        <div class="card" style="width: 22rem; margin: 10px 0;" data-aos="fade-up">
+            <div class="card-img-top-container">
+                <a href="{{ site.url }}{{ post.url }}"></a>
+            </div>
+            <div class="card-body">
+                {% for category in post.categories %}
+                <div class="category-container">
+                    <a href="/blog/categories/{{ category | downcase | url_escape | strip | replace: ' ', '-' }}" class="card-post-categories left left2">
+                        <p>{{ category }}</p>
+                    </a>
+                </div>
+                {% endfor %}
+                <a href="{{ site.url }}{{ post.url }}">
+                    <h3 class="card-post-title">{{ post.title }}</h3>
+                    <p class="card-post-description">{{ post.description }}...</p>
+                </a>
+                <small class="card-post-author-date">Written by <a class="left left2" style="color: #6d6d6d"
+                        href="{{ site.baseurl }}/blog/authors/{{ post.author }}"><strong>{{ post.author }}</strong></a>
+                    on
+                    {{ post.date | date: '%B %d, %Y' }}</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
