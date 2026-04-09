@@ -5,9 +5,9 @@ date: 2026-04-10
 categories: ['Malware', 'Analysis', 'Axios']
 comments: true
 author: Hemal Maniar
-description: 
-meta-description:  
-keywords: ''
+description: Axios NPM Supply Chain Attack Analysis
+meta-description: Axios NPM Supply Chain Attack Analysis
+keywords: 'malware,analysis,axios,npm,sapphire sleet'
 img: 
 alt:
 output: 
