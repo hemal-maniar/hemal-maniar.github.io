@@ -2,7 +2,7 @@
 layout: post
 title: "Axios NPM Supply Chain Attack Analysis"
 date: 2026-04-10
-categories: ['Malware', 'Analysis', 'Axios']
+categories: ['Malware', 'Analysis']
 comments: true
 author: Hemal Maniar
 description: Axios NPM Supply Chain Attack Analysis
@@ -21,7 +21,7 @@ output:
 ---
 
 ### Attack Background
-The WAVESHAPER campaign is a high-precision supply chain attack attributed to the North Korean state-sponsored group **Sapphire Sleet** (UNC1069). On March 31, 2026, the actor targeted the widely used `axios` HTTP client which sees over 100 million weekly downloads—by compromising a maintainer account and injecting a parasitic dependency named `plain-crypto-js`.
+The WAVESHAPER campaign is a high-precision supply chain attack attributed to the North Korean state-sponsored group **Sapphire Sleet** (UNC1069). On March 31, 2026, the actor targeted the widely used `axios` HTTP client which sees over 100 million weekly downloads by compromising a maintainer account and injecting a parasitic dependency named `plain-crypto-js`.
 
 This wasn't an impulsive hack. The attacker pre-staged a benign version of the dependency 18 hours in advance to bypass "new package" red flags. By the time the malicious `axios` version was published, the ecosystem's automation (NPM's `postinstall` hook) became the delivery mechanism for a multi-platform Remote Access Trojan (RAT).
 
