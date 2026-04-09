@@ -12,3 +12,4 @@ kramdown:
     default_lang: html
     css_class   : 'syntax'
 google_analytics: G-12F87QPXQJ  
+future: false
