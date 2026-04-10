@@ -709,8 +709,8 @@ img {
   }
 
   .blog-post-container img {
-  max-width: 100%;
-  width: 750px;
+  max-width: 750px;
+  width: 100%;
   height: auto;
   display: block;
   margin: 1rem auto;
