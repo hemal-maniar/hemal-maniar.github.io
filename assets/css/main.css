@@ -836,11 +836,3 @@ footer p {
     padding-bottom: 40px;
     color: #fff;
 }
-
-nav img, .navbar img {
-  width: 30px !important;
-  height: 30px !important;
-  object-fit: contain;
-  display: inline-block;
-  vertical-align: middle;
-}
