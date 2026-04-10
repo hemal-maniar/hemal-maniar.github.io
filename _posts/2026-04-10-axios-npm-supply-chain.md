@@ -8,7 +8,7 @@ author: Hemal Maniar
 description: Analysis of the recent Axios NPM supply chain attack that has been attributed to the North Korean state-sponsored APT Sapphire Sleet. The blog dives into the analysis of the Javascript dropper and the dynamic secondary payload (RAT) delivered to the target system from an attackercontrolled C2 server.
 meta-description: Analysis of the recent Axios NPM supply chain attack that has been attributed to the North Korean state-sponsored APT Sapphire Sleet. The blog dives into the analysis of the Javascript dropper and the dynamic secondary payload (RAT) delivered to the target system from an attackercontrolled C2 server.
 keywords: 'malware,analysis,axios,npm,sapphire sleet,remote access trojan,RAT,security research,malware research'
-image: /assets/img/posts/axios-npm-supply-chain/Pasted%20image%2020260409170901.png
+image:
 alt:
 output: 
   html_document:
