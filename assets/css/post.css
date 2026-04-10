@@ -715,8 +715,8 @@ li {
 }
 
 img {
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 500px;
+    max-height: 500px;
     width: auto;
     height: auto;
     display: block;
