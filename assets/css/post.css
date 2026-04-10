@@ -350,6 +350,17 @@ a.left2:hover {
     color: white;
 }
 
+.blog-post-container h5 {
+    font-size: 20px;
+    margin-top: 1.95em;
+    font-weight: 500;
+    /*margin-bottom: -0.28em;
+    letter-spacing: -0.022em;*/
+    line-height: 1.12;
+    font-style: normal;
+    color: white;
+}
+
 .blog-post-container p {
     margin: 1em 0;
     font-size: 20px;
@@ -696,3 +707,11 @@ img {
       height: auto;
     }
   }
+
+  .blog-post-container img {
+  max-width: 100%;
+  width: 750px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}

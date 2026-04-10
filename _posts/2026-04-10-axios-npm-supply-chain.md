@@ -234,7 +234,7 @@ Immediately after the execution, the JavaScript executes the following commands 
 ### YARA Rules
 
 Rule for `setup.js` which is the JavaScript dropper
-```YARA
+```
 rule SapphireSleet_WAVESHAPER_JSDropper {
     meta:
         description = "Detects the JS dropper postinstall script for the WAVESHAPER supply chain attack"
@@ -255,7 +255,7 @@ rule SapphireSleet_WAVESHAPER_JSDropper {
 ```
 
 Rule for the PowerShell script that gets executed as a secondary payload
-```YARA
+```
 rule SapphireSleet_WAVESHAPER_PS1_Agent {
     meta:
         description = "Detects the Windows PowerShell RAT payload for WAVESHAPER"
