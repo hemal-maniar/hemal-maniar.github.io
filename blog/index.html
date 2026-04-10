@@ -21,10 +21,10 @@ meta-keywords: 'computer science blog, learn python, technology blog'
         </a>
         <p class="p-date-author-category" style="color: #6d6d6d;">Posted by <a class="left left2" style="color: #6d6d6d;" 
                 href="{{ site.baseurl }}/blog/authors/{{ post.author }}">{{ post.author }}</a> in <a class="left left2" style="color: #6d6d6d;"
-                href="/blog/categories/{{ post.categories[0] | downcase | url_escape | strip | replace: ' ', '-' }}">{{ post.categories[0] }}</a>
+                href="/blog/start-here#{{ post.categories[0] | downcase | url_escape | strip | replace: ' ', '-' }}">{{ post.categories[0] }}</a>
             on {{ post.date | date: '%B %d, %Y' }}
         </p> 
-        <hr style="border-bottom: 1px solid rgba(255,255,255,0.15)">
+        <hr style="border-bottom: 1px solid rgba(46, 49, 65, 0.15)">
     </div>
     {% endfor %}
 </div>
