@@ -18,6 +18,7 @@ plugins:
   - jekyll-seo-tag
 
 # SEO Settings
+image: /assets/img/linkedin_media.png
 social:
   name: Hemal Maniar
   links:
