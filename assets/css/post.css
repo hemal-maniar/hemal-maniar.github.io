@@ -715,8 +715,8 @@ li {
 }
 
 img {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 30px;
+    max-height: 30px;
     width: auto;
     height: auto;
     display: block;
@@ -736,4 +736,12 @@ img {
   height: auto;
   display: block;
   margin: 1rem auto;
+}
+
+nav img, .navbar img {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
 }
