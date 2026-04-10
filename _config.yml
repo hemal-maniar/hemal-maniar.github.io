@@ -14,9 +14,6 @@ kramdown:
 google_analytics: G-12F87QPXQJ  
 future: true
 
-plugins:
-  - jekyll-seo-tag
-
 # SEO Settings
 image: /assets/img/linkedin_media.png
 social:
