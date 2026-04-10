@@ -5,10 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <!-- Meta Tags -->
 <meta name="author" content="Hemal Maniar">
-<meta property='og:title' content='Hemal Maniar Personal Website'/>
-<meta property='og:image' content='//hemal-maniar.github.io/assets/img/linkedin_media.png'/>
-<meta property='og:description' content='This is the personal website for Hemal Maniar. This site serves as a glimpse into my cybersecurity journey.'/>
-<meta property='og:url' content='//hemal-maniar.github.io'/>
+<meta property='og:title' content='{% if page.title %}{{ page.title }} - Hemal Maniar{% else %}Hemal Maniar Personal Website{% endif %}'/>
+<meta property='og:image' content='{% if page.img %}{{ site.url }}{{ page.img }}{% else %}{{ site.url }}/assets/img/linkedin_media.png{% endif %}'/>
+<meta property='og:description' content='{% if page.meta-description %}{{ page.meta-description }}{% else %}I'm a security engineer sharing my work and research in cybersecurity.{% endif %}'/>
+<meta property='og:url' content='{% if page.url %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}'/>
+<meta property='og:type' content='{% if page.layout == "post" %}article{% else %}website{% endif %}'/>
+<meta name="description" content='{% if page.meta-description %}{{ page.meta-description }}{% else %}I'm a security engineer sharing my work and research in cybersecurity.{% endif %}'>
 <!-- Font Awesome CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Bootstrap CSS -->
