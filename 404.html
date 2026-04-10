@@ -27,9 +27,9 @@ permalink: /404.html
   }
 
   .category-p {
-        color: #3f0;
+        color: #2e3141;
         display: inline-block;
-        border: 1px solid #3f0;
+        border: 1px solid #2e3141;
         border-radius: 100px;
         padding: 5px 10px;
         margin-right: 10px;
@@ -37,30 +37,30 @@ permalink: /404.html
 
     .category-p:hover {
         background-color: #2e3141;
-        border: 1px solid #3f0;
-        color: #3f0;
+        border: 1px solid #2e3141;
+        color: #f5f5f5;
     }
 </style>
 
-<div class="container" style="color: white;">
+<div class="container" style="color: #2e3141;">
   <h1>404</h1>
   <p><strong>Page not found :(</strong></p>
-  <p>I couldn't find the page you are looking for. Go back <a class="left left2" href="/blog" style="color: #6d6d6d;">home</a> or explore some
+  <p>I couldn't find the page you are looking for. Go back <a class="left left2" href="/blog" style="color: #2e3141;">home</a> or explore some
     categories below!</p>
-    <hr style="border: 1px solid white;">
+    <hr style="border: 1px solid #2e3141;">
     {% assign categories_list = site.categories %}
     {% if categories_list.first[0] == null %}
     {% for category in categories_list %}
-    <a href="#{{ category | downcase | downcase | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }}
+    <a href="/blog/start-here#{{ category | downcase | downcase | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }}
       ({{ site.tags[category].size }})</a>
     {% endfor %}
     {% else %}
     {% for category in categories_list %}
-    <a href="/blog/categories/{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}">
+    <a href="/blog/start-here#{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}">
       <p class="category-p">{{ category[0] | camelcase }} ({{ category[1].size }})</p>
     </a>
     {% endfor %}
     {% endif %}
-    <hr>
+    <hr style="border: 1px solid #2e3141;">
     {% assign categories_list = nil %}
 </div>
