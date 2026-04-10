@@ -29,6 +29,22 @@
     --button-hover-bg: #2e3141;
 }
 
+/* Light mode overrides for title, author, date, and tags */
+:root.light-mode .a-main-post-title,
+:root.light-mode .p-date-author-category,
+:root.light-mode .tag-p {
+    color: #2e3141;
+}
+
+:root.light-mode .tag-p {
+    border-color: #2e3141;
+}
+
+:root.light-mode .tag-p:hover {
+    background-color: #2e3141;
+    color: #f5f5f5;
+}
+
 /* General */
 
 html {
@@ -357,6 +373,10 @@ a.left2:hover {
     color: var(--text-primary);
 }
 
+.blog-post-container h2:first-of-type {
+    margin-top: 0.5em;
+}
+
 .blog-post-container h3 {
     font-size: 24px;
     margin-top: 1.95em;
@@ -376,7 +396,7 @@ a.left2:hover {
 }
 
 .blog-post-container h5 {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 1.95em;
     font-weight: 500;
     line-height: 1.12;
@@ -386,7 +406,7 @@ a.left2:hover {
 
 .blog-post-container p {
     margin: 1em 0;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.58;
     word-break: break-word;
     word-wrap: break-word;
@@ -634,6 +654,7 @@ pre {
 
 li {
     color: var(--text-primary);
+    font-size: 16px;
 }
 .kr {
     margin-top: 2em;

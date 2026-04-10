@@ -8,10 +8,14 @@
     .centered {
         display: block;
         margin-left: 20.6%;
+        margin-right: 20.6%;
     }
 
     .centered h1 {
-        font-size: 4em;
+        font-size: 3em;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .category-p {
@@ -29,12 +33,25 @@
     }
 
     @media screen and (max-width: 769px) {
+        .container-img-include {
+            padding-top: 30px;
+        }
+        .centered {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0 15px;
+        }
         .centered h1 {
             font-size: 2em;
         }
     }
 
     @media screen and (max-width: 426px) {
+        .centered {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0 15px;
+        }
         .centered h1 {
             font-size: 2.5em;
         }
@@ -45,14 +62,16 @@
             font-size: 2em;
         }
 
+        .centered {
+            padding: 0 10px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
         .category-p {
             display: inline-block;
             padding: 2px;
             margin-right: 2px;
-        }
-
-        .centered {
-            width: 90%;
         }
     }
 

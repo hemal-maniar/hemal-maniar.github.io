@@ -35,6 +35,7 @@ The magic happens with the `package.json` file where the attacker hides a comman
 ![](/assets/img/posts/axios-npm-supply-chain/Pasted%20image%2020260410004539.png)
 
 As soon as the download finishes, the computer will silently execute the JavaScript dropper.
+
 ### Attack Chain
 
 1. Infection - A developer installs the compromised NPM package. The `postinstall` hook runs the obfuscated JavaScript.
@@ -42,6 +43,7 @@ As soon as the download finishes, the computer will silently execute the JavaScr
 3. Staging & Persistence - Drops the relevant malicious file into the system. For Windows, drops a `.bat` file, that establishes registry persistence, and `.bat` pulls and executes a PowerShell script into memory. For Linux, it drops and executes a Python script.
 4. System Recon & Exfiltration - Once executed, the script gathers detailed system hardware, user, process, and sensitive directory data. This metadata gets wrapped in a structured JSON format which is then sent to the attacker's server via HTTP POST method.
 5. Command and Control: The infected machine sends a beacon to the attacker's server every 60 seconds, and waits for the attacker to respond with a command to execute binaries, inject process, or download secondary payloads.
+
 #### RAT Dropper
 
 The JavaScript dropper contains a logic to hunt for legitimate PowerShell binary on a Windows system. It is to masquerade itself under a legitimate process, it does so by copying the legitimate binary to a new location under `C:\ProgramData\wt.exe`. 
