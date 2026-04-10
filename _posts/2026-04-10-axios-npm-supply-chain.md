@@ -278,3 +278,9 @@ rule SapphireSleet_WAVESHAPER_PS1_Agent {
         $c2 and $json_beacon and $mem_exec and any of ($cmd*)
 }
 ```
+
+There’s nothing obviously suspicious here and that’s the point.
+
+This attack worked because it blended in. It didn’t rely on breaking things, just on being trusted.
+
+It’s a reminder to be a bit more aware of what we install and run, even when it looks normal.
