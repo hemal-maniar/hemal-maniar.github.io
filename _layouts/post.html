@@ -11,14 +11,16 @@
 </head>
 <style>
     table {
-    background-color: black;
+    background-color: transparent;
     border-collapse: collapse;
-    color: white;
+    color: var(--text-primary);
     line-height: 3em;
 }
 </style>
 <body>
     {% include nav.html %}
+    
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">🌙</button>
 
     <div class="img-container">
         {% include post-featured-image.html alt=page.alt title=page.title categories=page.categories author=page.author date=page.date %}
@@ -57,4 +59,27 @@
     -->
     {% include footer.html %}
     {% include footer-files.html %}
+    
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        
+        if (savedTheme === 'light') {
+            htmlElement.classList.add('light-mode');
+            themeToggle.textContent = '☀️';
+        } else {
+            htmlElement.classList.remove('light-mode');
+            themeToggle.textContent = '🌙';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const isLightMode = htmlElement.classList.toggle('light-mode');
+            
+            localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+            
+            themeToggle.textContent = isLightMode ? '☀️' : '🌙';
+        });
+    </script>
 </body>
