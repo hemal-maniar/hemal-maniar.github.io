@@ -13,3 +13,13 @@ kramdown:
     css_class   : 'syntax'
 google_analytics: G-12F87QPXQJ  
 future: true
+
+plugins:
+  - jekyll-seo-tag
+
+# SEO Settings
+social:
+  name: Hemal Maniar
+  links:
+    - https://twitter.com/he_malware
+    - https://github.com/hemal-maniar
