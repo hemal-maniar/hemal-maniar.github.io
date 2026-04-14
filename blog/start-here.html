@@ -7,7 +7,7 @@ meta-keywords: 'my life, programming, python, tutorial, data science, web develo
 <style>
     .category-p {
         display: inline-block;
-        color: #33ff00; 
+        color: #2e3141; 
         margin-right: 10px; 
         border-radius: 100px; 
         padding: 5px 10px; 
@@ -15,8 +15,9 @@ meta-keywords: 'my life, programming, python, tutorial, data science, web develo
     }
 
     .category-p:hover {
-        background-color: #6d6d6d;
-        border: 1px solid #33ff00;
+        background-color: #2e3141;
+        border: 1px solid #2e3141;
+        color: #f5f5f5;
     }
 
     html {
@@ -25,8 +26,8 @@ meta-keywords: 'my life, programming, python, tutorial, data science, web develo
 </style>
 
 <div class="container">
-    <h2 style="color: #33ff00;">What Do You Want To Learn About Today?</h2>
-    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(255,255,255,.15);">
+    <h2 style="color: #2e3141;">What Do You Want To Learn About Today?</h2>
+    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(46, 49, 65, 0.15);">
     {% assign categories_list = site.categories %}
     {% if categories_list.first[0] == null %}
     {% for category in categories_list %}
@@ -38,18 +39,18 @@ meta-keywords: 'my life, programming, python, tutorial, data science, web develo
     <a href="#{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}"><p class="category-p">{{ category[0] | camelcase }} ({{ category[1].size }})</p></a>
     {% endfor %}
     {% endif %}
-    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(255,255,255,.15);">
+    <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(46, 49, 65, 0.15);">
     {% assign categories_list = nil %}
 
     {% for category in site.categories %}
-    <h3 id="{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}" style="color: white; margin-top: 20px; line-height: 1.3em;">{{ category[0] | camelcase }}</h3>
+    <h3 id="{{ category[0] | downcase | url_escape | strip | replace: ' ', '-' }}" style="color: #2e3141; margin-top: 20px; line-height: 1.3em;">{{ category[0] | camelcase }}</h3>
     <ul style="color: #373737; margin-left: -20px;">
         {% assign pages_list = category[1] %}
         {% for post in pages_list %}
         {% if post.title != null %}
         {% if group == null or group == post.group %}
-        <li><a class="left left2" href="{{ site.url }}{{ post.url }}" style="color: white;">{{ post.title }} <time datetime="{{ post.date | date_to_xmlschema }}"
-                    itemprop="datePublished" style="color: white;">| {{ post.date | date: "%B %d, %Y" }}</time></a></li>
+        <li><a class="left left2" href="{{ site.url }}{{ post.url }}" style="color: #2e3141;">{{ post.title }} <time datetime="{{ post.date | date_to_xmlschema }}"
+                    itemprop="datePublished" style="color: #2e3141;">| {{ post.date | date: "%B %d, %Y" }}</time></a></li>
         {% endif %}
         {% endif %}
         {% endfor %}
