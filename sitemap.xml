@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% assign sorted_pages = site.html_pages | sort: "url" %}
+  {% for page in sorted_pages %}
+    {% unless page.url contains "/404" %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' | xml_escape }}</loc>
+    {% if page.date %}
+    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+    {% endif %}
+  </url>
+    {% endunless %}
+  {% endfor %}
+  {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+  {% for post in sorted_posts %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ post.url | xml_escape }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>
