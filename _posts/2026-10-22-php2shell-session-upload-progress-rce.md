@@ -5,9 +5,9 @@ date: 2026-10-22
 categories: ['Security Research']
 comments: true
 author: Hemal Maniar
-description: A from-scratch reproduction of the PHP session.upload_progress use-after-free (PHP2Shell) into a working multi-stage RCE chain against PHP 8.3.35 and 8.4.26, with a differential test against the patched builds.
-meta-description: A from-scratch reproduction of the PHP session.upload_progress use-after-free (PHP2Shell) into a working multi-stage RCE chain against PHP 8.3.35 and 8.4.26, with a differential test against the patched builds.
-keywords: 'PHP2Shell,PHP,CVE-2026-109618,CVE-2026-109619,session.upload_progress,use-after-free,RCE,heap,ASLR,security research'
+description: Reproduction of the PHP session.upload_progress use-after-free (PHP2Shell) into a working multi-stage RCE chain against PHP 8.3.35 and 8.4.26, plus a session-poison LFI chain for 5.4-8.2, with a differential test against the patched builds.
+meta-description: Reproduction of the PHP session.upload_progress use-after-free (PHP2Shell) into a working multi-stage RCE chain against PHP 8.3.35 and 8.4.26, plus a session-poison LFI chain for 5.4-8.2, with a differential test against the patched builds.
+keywords: 'PHP2Shell,PHP,CVE-2026-109618,CVE-2026-109619,session.upload_progress,use-after-free,UAF,RCE,heap,ASLR,security research'
 image:
 alt:
 output:
@@ -20,9 +20,9 @@ output:
     theme: lumen
 ---
 
-Hello folks, in today's blog I am going to cover my process of taking the PHP2Shell use-after-free from a description in a coordinated disclosure to a working, multi-stage remote code execution chain that I built and tested in an isolated lab.
+Hello folks, in today's blog I am going to cover the PHP2Shell use-after-free — how a bug in PHP's session upload-progress feature becomes remote code execution, and how I reproduced a working, multi-stage exploit chain in an isolated lab.
 
-I came across the original advisory through the OpenAI coordinated disclosure, then read the Wiz write-up, the PHP2Shell research portal, and the Calif analysis. There is also a public bypass PoC on GitHub. Instead of running that exploit as-is, I wanted to understand the mechanism myself and build my own chain from scratch, so that I could prove exactly which stage worked and which did not.
+Everything below is reproducible from [the repository](https://github.com/hemal-maniar/php2shell-poc).
 
 > **Scope:** This is a local lab exercise. The vulnerable PHP instances were built from official `php:*-apache` images, bound to `127.0.0.1` only, and the payload is a benign `id` command that writes to a file inside the container. Nothing here targets a system I do not own.
 
@@ -66,7 +66,7 @@ I confirmed this behavior with gdb. At the second request, `PS(send_cookie)` was
 
 ### Setting up the lab
 
-I built the targets as containers from the official `php:*-apache` images. Keep in mind that the worker model matters here, so I pinned Apache to prefork with a single worker, which keeps the process-reuse behaviour deterministic.
+I built the targets as containers from the official `php:*-apache` images. The worker model matters here, so I pinned Apache to prefork with a single worker, which keeps the process-reuse behavior deterministic.
 
 #### Target configuration
 
@@ -117,13 +117,21 @@ For reproducibility, I recorded the exact version, the SAPI, the loaded modules,
 
 Before building any exploit, I wanted to know which versions actually behave differently. I recorded the stage-one information disclosure as a simple signal: how many bytes came back from the over-read on the `Set-Cookie` header.
 
-| PHP Version       | Status                | Stage-1 Leak | RCE |
-|-------------------|-----------------------|--------------|-----|
-| 8.4.26            | Vulnerable             | 4096 B       | Yes |
-| 8.3.35            | Vulnerable             | 4096 B       | Yes |
-| 8.4.27            | Patched                | 32 B         | No  |
-| 8.3.36            | Patched                | 32 B         | No  |
-| 8.2.34 and below  | Different mechanism    | None         | No  |
+```text
+────────────────┬───────────────────┬────────────┬───
+PHP             │Status             │stage-1 leak│RCE
+────────────────┼───────────────────┼────────────┼───
+8.4.26          │vulnerable         │4096 B      │Yes
+────────────────┼───────────────────┼────────────┼───
+8.3.35          │vulnerable         │4096 B      │Yes
+────────────────┼───────────────────┼────────────┼───
+8.4.27          │patched            │32 B        │No
+────────────────┼───────────────────┼────────────┼───
+8.3.36          │patched            │32 B        │No
+────────────────┼───────────────────┼────────────┼───
+8.2.34 and below│different mechanism│none        │No
+────────────────┴───────────────────┴────────────┴───
+```
 
 That table is the whole argument. If the leak does not fire on the patched build, the chain has nothing to stand on. The 32-byte result on the patched builds is the normal, expected cookie length, which means the dangling pointer was cleared correctly.
 
@@ -149,7 +157,7 @@ I confirmed this in gdb. At the second request, `PS(send_cookie)` was `1` on 8.3
 
 ### Building the chain
 
-I split the work into five stages, each one producing a JSON artifact that the next stage consumes. No stage is allowed to hardcode an address, because every one of them is discovered at runtime.
+I split the work into five stages, each one producing a JSON artifact that the next stage consumes. No stage is allowed to hardcode an address — every address is discovered at runtime.
 
 #### Stage 1: Reconnaissance
 
@@ -208,7 +216,7 @@ def _ptr_stats(raw):
     return c
 ```
 
-The chunk base is the value that appears most frequently (I require at least 8 occurrences). This works because the Zend MM allocates in 2 MB chunks, so many pointers will share the same high bits.
+The chunk base is the value that appears most frequently (I require at least 8 occurrences). This works because Zend MM allocates in 2 MB chunks, so many pointers share the same high bits.
 
 #### Stage 3: Code information leak
 
@@ -233,7 +241,7 @@ struct _zend_array {
 };  // Total: 56 bytes
 ```
 
-By carefully positioning this fake structure, we make `ZSTR_LEN` (from the previous stage's fake zend_string) read the `pDestructor` field. Since `pDestructor` points to `zval_ptr_dtor` in libphp, and we know the offset of `zval_ptr_dtor` from Stage 1, we can compute the libphp base:
+By carefully positioning this fake structure in the over-read region, the leaked bytes expose its `pDestructor` field, which points to `zval_ptr_dtor` in libphp. Since we know the file offset of `zval_ptr_dtor` from Stage 1, we can compute the libphp base:
 
 ```
 libphp_base = leaked_pDestructor - zval_ptr_dtor_offset
@@ -264,19 +272,19 @@ We place a 167-byte blob containing three fake structures:
 2. **Fake zend_execute_data** (72 bytes) - Placed at offset 0x20, this simulates a PHP call frame. The key is positioning the argument pointer
 3. **Fake zend_string** - Placed at offset 0x80, this contains our command string
 
-The layout is precise:
+The layout is precise, and the first two structures deliberately overlap — the shared bytes serve fields of both:
 ```
 Offset 0x00:  zend_array (with pDestructor = zif_system)
 Offset 0x20:  zend_execute_data (with arg pointer at offset 0x50)
 Offset 0x80:  zend_string (containing "id>/out/p1")
 ```
 
-The fake `zend_execute_data` is constructed to make the call look like:
+The fake `zend_execute_data` is constructed so the call resolves as:
 ```c
 zif_system(zend_execute_data *execute_data, zval *return_value)
 ```
 
-Where the argument is our fake string.
+with the argument zval pointing at our fake string containing the command.
 
 #### Stage 5: Execution
 
@@ -297,7 +305,7 @@ The beauty of this is that we never need libc - everything we call is inside lib
 
 The exploit defeats ASLR through two HTTP-only information leaks:
 
-1. **Heap leak** - Stage 2 exposes ~98 pointers whose `& ~0x1FFFFF` is constant, revealing the 2 MB-aligned Zend MM chunk base
+1. **Heap leak** - Stage 2 exposes ~98 pointers that share the same 2 MB-aligned base (`& ~0x1FFFFF`), revealing the Zend MM chunk base
 2. **Code leak** - Stage 3 exposes `pDestructor == ZVAL_PTR_DTOR`, and since we know the offset of that symbol in libphp (from our ELF parser), we recover the libphp base
 
 This approach has significant advantages:
@@ -311,12 +319,19 @@ This approach has significant advantages:
 
 The heap layout constants are build-specific and must be discovered empirically. I implemented a calibration system that brute-forces the values:
 
-| Constant          | Value   | Method                                      |
-|-------------------|---------|---------------------------------------------|
-| `stage1_fillers`  | 841     | Scan 600–1000; only 841 produces a leak     |
-| `stage2_n_arr`    | 406     | Scan 300–500; only 406 produces a leak      |
-| `stage2_vlen`     | 16      | Scan 8–24; only 16 produces a leak          |
-| `stage3_htdata_off` | `0x690d8` | Scan `0x69000`–`0x69200`; only `0x690d8` works |
+```text
+─────────────────┬────────┬─────────────────────────────────────────
+Constant         │Value   │Method
+─────────────────┼────────┼─────────────────────────────────────────
+stage1_fillers   │841     │Scan 600-1000, only 841 produces a leak
+─────────────────┼────────┼─────────────────────────────────────────
+stage2_n_arr     │406     │Scan 300-500, only 406 produces a leak
+─────────────────┼────────┼─────────────────────────────────────────
+stage2_vlen      │16      │Scan 8-24, only 16 produces a leak
+─────────────────┼────────┼─────────────────────────────────────────
+stage3_htdata_off│0x690d8 │Scan 0x69000-0x69200, only 0x690d8 works
+─────────────────┴────────┴─────────────────────────────────────────
+```
 
 These values are cached in `results/calibration.json` and reused for subsequent exploits. The calibration is sensitive to:
 - PHP build configuration
@@ -358,7 +373,9 @@ The entire exploit is a single self-contained Python file (`exploit/php2shell_ex
 - Differential testing support
 - Reverse shell support (bash, python, php)
 - Target probing capability
-- Detection rules (Suricata, Sigma, ModSecurity)
+- Session poison + LFI chain (PHP 5.4-8.2)
+
+Detection rules (Suricata, Sigma, ModSecurity) and a YARA scanner ship alongside it in `detection/`.
 
 **Usage**
 
@@ -443,7 +460,7 @@ Since the UAF chain only fires on PHP 8.3+, I implemented a second chain to cove
 
 The mechanism works like this:
 
-1. A multipart POST with `PHP_SESSION_UPLOAD_PROGRESS` before a file field makes PHP record upload progress in `$_SESSION['upload_progress_<key>']['files'][0]`. One of the recorded fields is the upload's client-supplied `filename`.
+1. A multipart POST with `PHP_SESSION_UPLOAD_PROGRESS` before a file field makes PHP record upload progress in `$_SESSION['upload_progress_<key>']['files'][0]`. One of the recorded fields is the upload's client-supplied filename, stored under `files[0]['name']`.
 2. If the filename contains PHP code and `session.upload_progress.cleanup=Off`, that code is serialized into `sess_<id>` when the session is written at request end.
 3. Including `sess_<id>` through an app-level LFI (e.g. `?page=/tmp/sess_<id>`) executes the embedded PHP.
 
@@ -515,7 +532,7 @@ This starts seven containers:
 - PHP 7.4 with an LFI test app (session poison chain) on port 8093
 - PHP 5.6 with an LFI test app (session poison chain) on port 8094
 
-See [quickstart.md](quickstart.md) for detailed instructions.
+See [quickstart.md](https://github.com/hemal-maniar/php2shell-poc/blob/main/quickstart.md) for detailed instructions.
 
 ### Manual Setup
 
