@@ -117,21 +117,13 @@ For reproducibility, I recorded the exact version, the SAPI, the loaded modules,
 
 Before building any exploit, I wanted to know which versions actually behave differently. I recorded the stage-one information disclosure as a simple signal: how many bytes came back from the over-read on the `Set-Cookie` header.
 
-```text
-────────────────┬───────────────────┬────────────┬───
-PHP             │Status             │stage-1 leak│RCE
-────────────────┼───────────────────┼────────────┼───
-8.4.26          │vulnerable         │4096 B      │Yes
-────────────────┼───────────────────┼────────────┼───
-8.3.35          │vulnerable         │4096 B      │Yes
-────────────────┼───────────────────┼────────────┼───
-8.4.27          │patched            │32 B        │No
-────────────────┼───────────────────┼────────────┼───
-8.3.36          │patched            │32 B        │No
-────────────────┼───────────────────┼────────────┼───
-8.2.34 and below│different mechanism│none        │No
-────────────────┴───────────────────┴────────────┴───
-```
+| PHP Version       | Status               | Stage-1 Leak | RCE |
+|-------------------|----------------------|--------------|-----|
+| 8.4.26            | Vulnerable            | 4096 B       | Yes |
+| 8.3.35            | Vulnerable            | 4096 B       | Yes |
+| 8.4.27            | Patched               | 32 B         | No  |
+| 8.3.36            | Patched               | 32 B         | No  |
+| 8.2.34 and below  | Different mechanism   | None         | No  |
 
 That table is the whole argument. If the leak does not fire on the patched build, the chain has nothing to stand on. The 32-byte result on the patched builds is the normal, expected cookie length, which means the dangling pointer was cleared correctly.
 
@@ -319,19 +311,12 @@ This approach has significant advantages:
 
 The heap layout constants are build-specific and must be discovered empirically. I implemented a calibration system that brute-forces the values:
 
-```text
-─────────────────┬────────┬─────────────────────────────────────────
-Constant         │Value   │Method
-─────────────────┼────────┼─────────────────────────────────────────
-stage1_fillers   │841     │Scan 600-1000, only 841 produces a leak
-─────────────────┼────────┼─────────────────────────────────────────
-stage2_n_arr     │406     │Scan 300-500, only 406 produces a leak
-─────────────────┼────────┼─────────────────────────────────────────
-stage2_vlen      │16      │Scan 8-24, only 16 produces a leak
-─────────────────┼────────┼─────────────────────────────────────────
-stage3_htdata_off│0x690d8 │Scan 0x69000-0x69200, only 0x690d8 works
-─────────────────┴────────┴─────────────────────────────────────────
-```
+| Constant            | Value     | Method                                         |
+|---------------------|-----------|------------------------------------------------|
+| `stage1_fillers`    | `841`     | Scan `600–1000`; only `841` produces a leak     |
+| `stage2_n_arr`      | `406`     | Scan `300–500`; only `406` produces a leak      |
+| `stage2_vlen`       | `16`      | Scan `8–24`; only `16` produces a leak          |
+| `stage3_htdata_off` | `0x690d8` | Scan `0x69000–0x69200`; only `0x690d8` works    |
 
 These values are cached in `results/calibration.json` and reused for subsequent exploits. The calibration is sensitive to:
 - PHP build configuration
